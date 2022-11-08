@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+h1,h2,h3,h4,h5,h6,p,span{
+    font-family: monospace;
+}
+.containerCustom{
+    width: 100%;
+    height: 100vh;
+}
+.mat-expansion-panel-header{
+    height: 46px !important;
+    width: 92%;
+    padding: 0px 0px 0px 10px !important;
+}
+.customNavBg{
+    background-color: #f1f4fa;
+    height: 90vh;
+}
+.customMiniContainer{
+    margin: 20px;
+}
+.customMiniContainer .mat-card{
+    background-color: rgba(112, 188, 239,0.15);
+}
+.example-spacer{
+    width: 100%;
+}
+.mat-expansion-panel{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    box-shadow:none !important;
+    width:196px;
+    
+}
+.mat-list-item{
+    margin: 1px !important;
+}
+.mat-list-item-content{
+    padding:0px !important;
+}
+.customMenuLi{
+    background-color: #fff;
+}
+.customMenuLi span{
+    margin-left: 5px;
+}
+.mat-list-item-content .mat-icon{
+    color:#0e0d32;
+    margin-right: 5px;
+}
+.expandableLitem .mat-icon{
+    margin-right: 8px !important;
+}
+.customHeader{
+    text-align:center;
+    background:#415e8c;
+    color:#fff;
+}

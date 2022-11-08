@@ -1,0 +1,27 @@
+.mat-card-title{
+    background-color: #415e8c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+.mat-card-subtitle{
+    margin-top: 5px;
+}
+.counterNumber{
+    float: right;
+    border:0.25px solid white;
+    border-radius: 50px;
+    width: 30px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+.secondaryContainer{
+    width: 100%;
+}

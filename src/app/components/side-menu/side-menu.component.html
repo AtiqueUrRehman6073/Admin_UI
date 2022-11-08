@@ -1,0 +1,58 @@
+<mat-drawer-container class="containerCustom">
+    <mat-drawer #drawer mode="side">
+        <mat-card class="customHeader">
+            <h1>Welcome</h1>
+        </mat-card>
+        <mat-nav-list>
+            <mat-card class="customNavBg">
+                <mat-list-item class="customMenuLi">
+                    <span>
+                        <mat-icon>dashboard</mat-icon>
+                    </span>
+                    <span>Dashboard</span>
+                </mat-list-item>
+                <mat-list-item class="customMenuLi">
+                    <span>
+                        <mat-icon>donut_small</mat-icon>
+                    </span>
+                    <span>Activities</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class="expandableLitem">
+                                        <mat-icon>collections</mat-icon>
+                                    </span>
+                                    Gallery
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-list-item class="customMenuLi">
+                                <span>
+                                    <mat-icon>groups</mat-icon>
+                                </span>
+                                <span>Voulunteers Team</span>
+                            </mat-list-item>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </mat-list-item>
+            </mat-card>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-toolbar class="customHeader">
+        <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+            aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>My Admin</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar>
+    <app-dashboard></app-dashboard>
+</mat-drawer-container>
