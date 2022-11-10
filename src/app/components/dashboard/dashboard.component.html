@@ -102,13 +102,13 @@
     </div>
     <div class="secondaryContainer mat-elevation-z2">
         <div class="secondaryHeader">
-            <h3>Details</h3>
+            <h3>General Details</h3>
         </div>
         <div class="row customRowHeight">
             <div class="col-lg-6 col-md-12 col-sm-12" [style]="{'height':'inherit','overflow':'inherit'}">
                 <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0'}">
                     <div class="miniHeader">
-                        <h3>Volunteers</h3>
+                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">person</mat-icon>Volunteers</h3>
                     </div>
                     <table mat-table [dataSource]="dataSource">
                         <!-- Position Column -->
@@ -144,16 +144,19 @@
                 </mat-card>
                 <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0'}">
                     <div class="miniHeader">
-                        <h3>Files</h3>
+                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">folder</mat-icon>Files</h3>
                     </div>
                     <mat-list>
                         <div mat-subheader>Folders</div>
-                        <mat-list-item *ngFor="let folder of folders">
-                            <mat-icon mat-list-icon>folder</mat-icon>
+                        <mat-list-item *ngFor="let folder of folders" class="filesList">
+                            <mat-icon mat-list-icon [ngStyle]="{'color':'gold'}">folder</mat-icon>
                             <div mat-line>{{folder.name}}</div>
                             <div mat-line> {{folder.updated | date}} </div>
-                            <div style="float: right;">
-                                <mat-icon>pencil</mat-icon>
+                            <div style="float: right;color: grey;">
+                                <!-- <i class="fa fa-fw fa-pencil"></i>
+                                <i class="fa fa-fw fa-trash"></i> -->
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-danger"><mat-icon [ngStyle]="{'color':'white'}">delete</mat-icon></button>
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-warning"><mat-icon>edit</mat-icon></button>
                             </div>
                         </mat-list-item>
                     </mat-list>
@@ -162,7 +165,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12" [style]="{'overflow':'inherit'}">
                 <mat-card class="mat-elevation-z2" style="padding: 0;margin:3px">
                     <div class="miniHeader">
-                        <h3>Graph</h3>
+                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">wb_sunny</mat-icon>Temperature</h3>
                     </div>
                     <app-highchart-graphs></app-highchart-graphs>
                 </mat-card>
@@ -170,13 +173,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <mat-card class="mat-elevation-z4 smCard">
                             <div class="miniHeader">
-                                <h3>Users</h3>
+                                <h3>Clients</h3>
                             </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
-                                    Active Users</h5>
-                                <button class="btn btn-sm btn-success">
-                                    <mat-icon>groups</mat-icon>
+                                    Active Cilents  </h5>
+                                <button class="btn btn-sm btn-info">
+                                    <mat-icon [ngStyle]="{'color':'white'}">groups</mat-icon>
                                 </button>
                             </div>
                             <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
@@ -185,13 +188,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <mat-card class="mat-elevation-z4 smCard">
                             <div class="miniHeader">
-                                <h3>Offices</h3>
+                                <h3>Users</h3>
                             </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
-                                    Sub-Offices </h5>
-                                <button class="btn btn-sm btn-warning">
-                                    <mat-icon>business</mat-icon>
+                                    Total Users</h5>
+                                <button class="btn btn-sm btn-success">
+                                    <mat-icon>groups</mat-icon>
                                 </button>
                             </div>
                             <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
@@ -217,13 +220,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <mat-card class="mat-elevation-z4 smCard">
                             <div class="miniHeader">
-                                <h3>Users</h3>
+                                <h3>Revenue</h3>
                             </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
-                                    Active Users</h5>
+                                    Revenue </h5>
                                 <button class="btn btn-sm btn-success">
-                                    <mat-icon>groups</mat-icon>
+                                    <mat-icon>shopify</mat-icon>
                                 </button>
                             </div>
                             <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
@@ -247,13 +250,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <mat-card class="mat-elevation-z4 smCard">
                             <div class="miniHeader">
-                                <h3>Core Team</h3>
+                                <h3>Employees</h3>
                             </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
-                                    Core Members</h5>
-                                <button class="btn btn-sm btn-danger">
-                                    <mat-icon>groups</mat-icon>
+                                    Total Employees</h5>
+                                <button class="btn btn-sm btn-info">
+                                    <mat-icon [ngStyle]="{'color':'white'}">groups</mat-icon>
                                 </button>
                             </div>
                             <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
