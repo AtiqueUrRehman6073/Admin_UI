@@ -75,7 +75,8 @@
     background-color: #fff;
 }
 .smCard{
-    
+    height: 125px;
+    margin: 5px 0px 5px 0px;
 }
 table{
     height: 250px;

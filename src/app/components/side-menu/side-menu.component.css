@@ -1,0 +1,13 @@
+.btn-default{
+    background: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.form-control{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.container-fluid{
+    width: 20%;
+    margin-right: 100px;
+}

@@ -1,0 +1,72 @@
+/////////One Done with High Charts Graph /////////
+  // value: number = 50;
+  // x: number = 10;
+  // y: number = 10;
+  // public options: any = {
+  //   chart: {
+  //     type: 'scatter',
+  //     height: 700
+  //   },
+  //   title: {
+  //     text: 'Sample Scatter Plot'
+  //   },
+  //   credits: {
+  //     enabled: false
+  //   },
+  //   tooltip: {
+  //     formatter: () => {
+  //       return 'x: ' + Highcharts.dateFormat('%e %b %y %H:%M:%S', this.x) + ' y: ' + this.y.toFixed(2);
+  //     }
+  //   },
+  //   xAxis: {
+  //     type: 'datetime',
+  //     labels: {
+  //       formatter: () => {
+  //         return Highcharts.dateFormat('%e %b %y', this.value);
+  //       }
+  //     }
+  //   },
+  //   series: [
+  //     {
+  //       name: 'Normal',
+  //       turboThreshold: 500000,
+  //       data: []
+  //     },
+  //     {
+  //       name: 'Abnormal',
+  //       turboThreshold: 500000,
+  //       data: []
+  //     }
+  //   ]
+  // }
+  // subscription: any;
+  // updated_normal_data: any;
+  // updated_abnormal_data: any;
+  // ngOnInit() {
+  //   //setInterval(() => {
+  //   let apiLink = 'https://api.myjson.com/bins/13lnf4';
+
+  //   let response: any = this.http.get(apiLink);
+  //   console.clear;
+  //   console.log(response);
+  //   response.subscribe(
+  //     (data: { forEach: (arg0: (row: any) => void) => void; }) => {
+  //       data.forEach(row => {
+  //         const temp_row = [
+  //           new Date(row.timestamp).getTime(),
+  //           row.value
+  //         ];
+  //         row.Normal === 1 ? this.updated_normal_data.push(temp_row) : this.updated_abnormal_data.push(temp_row);
+  //       });
+  //       this.options.series[0]['data'] = this.updated_normal_data;
+  //       this.options.series[1]['data'] = this.updated_abnormal_data;
+  //       Highcharts.chart('container', this.options);
+  //     })
+  //   //},1000);
+  // }
+  // getApiResponse(url: string) {
+  //   return this.http.get(url, {})
+  //     .toPromise().then((res: any) => {
+  //       return res;
+  //     });
+  // }

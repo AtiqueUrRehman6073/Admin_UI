@@ -19,7 +19,7 @@
                     <p>24 New visits</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button>SHARE</button>
+                    <button mat-raised-button class="btn btn-sm btn-info">SHARE</button>
                     <button mat-raised-button (click)="openSnackBar()">DETAILS</button>
                 </mat-card-actions>
             </mat-card>
@@ -57,7 +57,7 @@
         <div class="col-lg-2 col-md-3 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="23" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>Core Team
+                    <mat-icon>groups</mat-icon>Teams
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
@@ -152,6 +152,9 @@
                             <mat-icon mat-list-icon>folder</mat-icon>
                             <div mat-line>{{folder.name}}</div>
                             <div mat-line> {{folder.updated | date}} </div>
+                            <div style="float: right;">
+                                <mat-icon>pencil</mat-icon>
+                            </div>
                         </mat-list-item>
                     </mat-list>
                 </mat-card>
@@ -161,9 +164,7 @@
                     <div class="miniHeader">
                         <h3>Graph</h3>
                     </div>
-                    <ng-dygraphs [data]="data" [options]="options"
-                        [style]="{'max-height':'inherit','overflow':'inherit'}">
-                    </ng-dygraphs>
+                    <app-highchart-graphs></app-highchart-graphs>
                 </mat-card>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -172,8 +173,86 @@
                                 <h3>Users</h3>
                             </div>
                             <div style="display: flex;justify-content: space-between;">
-                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">Active Users</h5>
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Active Users</h5>
                                 <button class="btn btn-sm btn-success">
+                                    <mat-icon>groups</mat-icon>
+                                </button>
+                            </div>
+                            <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
+                        </mat-card>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <mat-card class="mat-elevation-z4 smCard">
+                            <div class="miniHeader">
+                                <h3>Offices</h3>
+                            </div>
+                            <div style="display: flex;justify-content: space-between;">
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Sub-Offices </h5>
+                                <button class="btn btn-sm btn-warning">
+                                    <mat-icon>business</mat-icon>
+                                </button>
+                            </div>
+                            <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
+                        </mat-card>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <mat-card class="mat-elevation-z4 smCard">
+                            <div class="miniHeader">
+                                <h3>Core Team</h3>
+                            </div>
+                            <div style="display: flex;justify-content: space-between;">
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Core Members</h5>
+                                <button class="btn btn-sm btn-danger">
+                                    <mat-icon>groups</mat-icon>
+                                </button>
+                            </div>
+                            <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
+                        </mat-card>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <mat-card class="mat-elevation-z4 smCard">
+                            <div class="miniHeader">
+                                <h3>Users</h3>
+                            </div>
+                            <div style="display: flex;justify-content: space-between;">
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Active Users</h5>
+                                <button class="btn btn-sm btn-success">
+                                    <mat-icon>groups</mat-icon>
+                                </button>
+                            </div>
+                            <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
+                        </mat-card>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <mat-card class="mat-elevation-z4 smCard">
+                            <div class="miniHeader">
+                                <h3>Offices</h3>
+                            </div>
+                            <div style="display: flex;justify-content: space-between;">
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Sub-Offices </h5>
+                                <button class="btn btn-sm btn-warning">
+                                    <mat-icon>business</mat-icon>
+                                </button>
+                            </div>
+                            <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
+                        </mat-card>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <mat-card class="mat-elevation-z4 smCard">
+                            <div class="miniHeader">
+                                <h3>Core Team</h3>
+                            </div>
+                            <div style="display: flex;justify-content: space-between;">
+                                <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
+                                    Core Members</h5>
+                                <button class="btn btn-sm btn-danger">
                                     <mat-icon>groups</mat-icon>
                                 </button>
                             </div>
@@ -186,6 +265,9 @@
         <div class="secondaryHeader">
             <h3>Details</h3>
         </div>
-        <div class="row customRowHeight"></div>
+        <div class="row">
+            <ng-dygraphs [data]="data" [options]="options" [style]="{'max-height':'inherit','overflow':'inherit','width':'100%'}">
+            </ng-dygraphs>
+        </div>
     </div>
 </div>

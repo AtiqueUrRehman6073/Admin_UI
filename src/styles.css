@@ -3,7 +3,6 @@
 *::-webkit-scrollbar {
     display: none;
   }
-  
   /* Hide scrollbar for IE, Edge and Firefox */
 * {
     -ms-overflow-style: none;  /* IE and Edge */
@@ -11,8 +10,11 @@
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ng-dygraphs-chart-container *{
+    width: 100% !important;
+}
 h1,h2,h3,h4,h5,h6,p,span{
-    font-family: monospace;
+    font-family: monospace !important;
 }
 table{
     width: 100% !important;
@@ -26,6 +28,10 @@ table{
     width: 92%;
     padding: 0px 0px 0px 10px !important;
 }
+.customNav{
+    margin-top: 10px;
+    border-top: 2px solid lightgrey;
+}
 .customNavBg{
     background-color: #f1f4fa;
     height: 90vh;
@@ -38,6 +44,9 @@ table{
 }
 .example-spacer{
     width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #fff;
 }
 .mat-expansion-panel{
     border-top-left-radius: 0px !important;
@@ -45,27 +54,38 @@ table{
     border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
     box-shadow:none !important;
-    width:196px;
+    width: 100%;
     
 }
 .mat-list-item{
     margin: 1px !important;
 }
-.mat-list-item-content{
-    padding:0px !important;
+.customLiContent .mat-list-item-content{
+    padding:0 !important;
+    margin: 0 !important;
+    display: block !important;
 }
 .mat-toolbar{
     height: 40px;
 }
+.mat-drawer{
+    background-color: #f1f4fa;
+    width: 15%;
+}
 .customMenuLi{
     background-color: #fff;
 }
-.customMenuLi span{
-    margin-left: 5px;
+.customMenuLi .mat-list-item-content{
+    display: flex !important;
+    align-items: center;
+}
+.customMenuLi span .mat-icon{
+    margin-left: 10px;
 }
 .mat-list-item-content .mat-icon{
     color:#0e0d32;
     margin-right: 5px;
+    margin-left: 15px;
 }
 .expandableLitem .mat-icon{
     margin-right: 8px !important;
@@ -74,4 +94,31 @@ table{
     text-align:center;
     background:#415e8c;
     color:#fff;
+}
+.introCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #415e8c;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    margin: 1px;
+}
+.introCard h4{
+    margin-top: 5px;
+}
+.avatarMini{
+    border: 0.5px solid #b0c6dae1;;
+    border-radius: 25px;
+    width: 30px;
+    height: 30px;
+}
+.avatar{
+    border: 0.5px solid #b0c6dae1;;
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
 }

@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { DashboardAdminComponent } from './Views/dashboard-admin/dashboard-admin.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { CustomGridComponent } from './components/custom-grid/custom-grid.component';
+import {HighchartGraphsComponent} from './components/highchart-graphs/highchart-graphs.component';
 import { registerAllModules } from 'handsontable/registry';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import HotTableModule from 'handsontable';
@@ -14,6 +15,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DecimalPipe } from '@angular/common';
 import { NgDygraphsModule } from 'ng-dygraphs';
+import {HighchartsChartModule} from 'highcharts-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 registerAllModules();
 @NgModule({
@@ -22,7 +25,8 @@ registerAllModules();
     DashboardAdminComponent,
     SideMenuComponent,
     CustomGridComponent,
-    DashboardComponent
+    DashboardComponent,
+    HighchartGraphsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ registerAllModules();
     FormsModule,
     NgDygraphsModule,
     NgbModule,
+    HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]

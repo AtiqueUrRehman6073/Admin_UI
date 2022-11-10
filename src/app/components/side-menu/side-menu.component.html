@@ -1,9 +1,13 @@
 <mat-drawer-container class="containerCustom">
     <mat-drawer #drawer mode="side">
-        <mat-card class="customHeader">
+        <div class="introCard">
             <h1>Welcome</h1>
-        </mat-card>
-        <mat-nav-list>
+            <div>
+                <img src="../../../assets/Images/Avatar.jfif" alt="Avatar" class="avatar">
+            </div>
+            <h4>www.my-admin.com</h4>
+        </div>
+        <mat-nav-list class="customNav">
             <mat-card class="customNavBg">
                 <mat-list-item class="customMenuLi">
                     <span>
@@ -17,7 +21,7 @@
                     </span>
                     <span>Activities</span>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item class="customLiContent">
                     <mat-accordion>
                         <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -47,6 +51,16 @@
         </button>
         <span>My Admin</span>
         <span class="example-spacer"></span>
+        <span class="container-fluid">
+            <form class="navbar-form navbar-left" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                        aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                </div>
+            </form>
+        </span>
+        <img src="../../../assets/Images/Avatar.jfif" alt="Avatar" class="avatarMini">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
         </button>

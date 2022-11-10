@@ -24,6 +24,8 @@
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.2",
     "handsontable": "^12.2.0",
+    "highcharts": "^10.3.1",
+    "highcharts-angular": "^3.0.0",
     "jquery": "^3.6.1",
     "ng-dygraphs": "^0.4.0",
     "ng-handsontable": "^0.13.2",
