@@ -1,13 +1,13 @@
-.btn-default{
-    background: #fff;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-.form-control{
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
 .container-fluid{
     width: 20%;
     margin-right: 100px;
+}
+.customMenuLi{
+    margin-top: 5px !important;
+    background-image: linear-gradient(to bottom right, #1e3963,#4d6c9c57 );
+    color: white;
+    border-radius: 10px;
+}
+.customMenuLi:hover{
+    background-image: linear-gradient(to bottom right, #6a83a857,#1a3561 );
 }

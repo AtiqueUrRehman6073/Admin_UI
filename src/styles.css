@@ -25,19 +25,24 @@ table{
 }
 .mat-expansion-panel-header{
     height: 46px !important;
-    width: 92%;
     padding: 0px 0px 0px 10px !important;
+}
+.mat-expansion-panel-header .mat-expansion-indicator{
+    margin-right: 15px;
 }
 .customNav{
     margin-top: 10px;
     border-top: 2px solid lightgrey;
 }
 .customNavBg{
-    background-color: #f1f4fa;
+    background-image: linear-gradient(to bottom right, #6f84a742,#7c93b8c5 );
     height: 90vh;
 }
 .customMiniContainer{
     margin: 20px;
+}
+.customMiniContainer .col-xl-2{
+    margin:5px 0px 0px 0px;
 }
 .customMiniContainer .mat-card{
     background-color: rgb(255, 255, 255);
@@ -49,16 +54,19 @@ table{
     color: #fff;
 }
 .mat-expansion-panel{
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
+    border-radius: 10px !important;
     box-shadow:none !important;
     width: 100%;
-    
+    background-image: linear-gradient(to bottom right, #1e3963,#415e8c73 );
+}
+.mat-expansion-panel *{
+    color:white;
 }
 .mat-list-item{
     margin: 1px !important;
+}
+.customLiContent{
+    display: inline-block !important;
 }
 .customLiContent .mat-list-item-content{
     padding:0 !important;
@@ -69,11 +77,11 @@ table{
     height: 40px;
 }
 .mat-drawer{
-    background-color: #f1f4fa;
-    width: 15%;
+    background-image: linear-gradient(to bottom right, #8392aa54,#3e5983c0 );
+    width: 300px;
 }
-.customMenuLi{
-    background-color: #fff;
+.customMenuLi *{
+    background: transparent;
 }
 .customMenuLi .mat-list-item-content{
     display: flex !important;
@@ -92,7 +100,7 @@ table{
 }
 .customHeader{
     text-align:center;
-    background:#415e8c;
+    background-image: linear-gradient(to bottom right, #1e3963,#415e8c73 );
     color:#fff;
 }
 .introCard{
@@ -100,12 +108,12 @@ table{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #415e8c;
+    background-image: linear-gradient(to bottom right, #415e8c73,#1e3963 );
     color: #fff;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 10px;
-    margin: 1px;
+    margin: 3px;
 }
 .introCard h4{
     margin-top: 5px;
