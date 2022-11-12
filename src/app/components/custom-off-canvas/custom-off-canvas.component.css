@@ -15,10 +15,11 @@
     border: 1px solid lightgrey;
     background-color: rgba(255, 255, 255, 0.918);
     position: relative;
+    z-index: 1000;
     animation-name: offCanvasAnim;
     animation-duration: 0.5s;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 @keyframes offCanvasAnim {
     0% {
@@ -35,4 +36,17 @@
     100% {
         margin-left: auto;
     }
+}
+.secondaryHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.secondaryHeader *{
+    height: 60px;
+    margin: 0;
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

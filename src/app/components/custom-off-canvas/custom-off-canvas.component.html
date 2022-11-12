@@ -1,3 +1,8 @@
-<div class="mainContainer" id="offCanvasContainer" (click)="closeOffCanvas()">
-    <div class="offCanvasContainer" [style.width.px]='width'></div>
+<div class="mainContainer" id="offCanvasContainer">
+    <div class="offCanvasContainer" [style.width.px]='width'>
+        <div class="secondaryHeader">
+            <h3>Manage Accounts</h3>
+            <span (click)="closeOffCanvas()" style="cursor: pointer;margin-right: 10px;"><mat-icon>close</mat-icon></span>
+        </div>
+    </div>
 </div>

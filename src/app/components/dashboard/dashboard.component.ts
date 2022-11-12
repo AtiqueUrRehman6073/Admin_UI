@@ -43,7 +43,7 @@ export class DashboardComponent implements AfterViewInit {
       updated: new Date('1/28/16'),
     },
   ];
-  options = { width: 800, labels: ['Date', 'Temperature'], xlabel: 'X label text', ylabel: 'Y label text', title: 'Donations', animatedZooms: true, pointSize: 4 }
+  options = { width: 800, labels: ['Date', 'Bottles'], xlabel: 'X label text', ylabel: 'Y label text', title: 'Sales', animatedZooms: true, pointSize: 4 }
   
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -54,7 +54,7 @@ export class DashboardComponent implements AfterViewInit {
   }
   /////////   Toasts Functions   ///////////
   showSuccess() {
-    this.toastr.success('Welcome to My-Admin, Have a cool Trip!!', 'Toastr fun!');
+    this.toastr.success('Welcome to Mangla-Foods Admin!!', 'Login Successful!');
   }
 
   ////////   Swal Functions  ///////////

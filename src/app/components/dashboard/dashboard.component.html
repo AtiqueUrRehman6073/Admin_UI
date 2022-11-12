@@ -14,11 +14,11 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="24" matBadgeColor="warn">
-                    Actitvities<mat-icon>insights</mat-icon>
+                    Orders<mat-icon>insights</mat-icon>
                 </mat-card-title>
-                <mat-card-subtitle>This Month</mat-card-subtitle>
+                <mat-card-subtitle>Today</mat-card-subtitle>
                 <mat-card-content>
-                    <p>24 New visits</p>
+                    <p><span class="btn-sm btn-danger">24</span> New Orders</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button class="btn btn-sm btn-info">SHARE</button>
@@ -28,12 +28,12 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
-                <mat-card-title matBadge="5" matBadgeColor="warn">
-                    New Members<mat-icon>group_add</mat-icon>
+                <mat-card-title matBadge="800" matBadgeColor="warn">
+                    Bottles<mat-icon>battery_6_bar</mat-icon>
                 </mat-card-title>
-                <mat-card-subtitle>This Month</mat-card-subtitle>
+                <mat-card-subtitle>Stock</mat-card-subtitle>
                 <mat-card-content>
-                    <p>5 New members</p>
+                    <p><span class="btn-sm btn-info">800</span> Bottles</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
@@ -43,12 +43,12 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
-                <mat-card-title matBadge="54" matBadgeColor="warn">
-                    Events<mat-icon>stacked_bar_chart</mat-icon>
+                <mat-card-title matBadge="654" matBadgeColor="warn">
+                    Sales<mat-icon>stacked_bar_chart</mat-icon>
                 </mat-card-title>
-                <mat-card-subtitle>This Year</mat-card-subtitle>
+                <mat-card-subtitle>Today</mat-card-subtitle>
                 <mat-card-content>
-                    <p>54 Events</p>
+                    <p><span class="btn-sm btn-success">654</span> Bottles</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
@@ -59,11 +59,11 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="23" matBadgeColor="warn">
-                    Teams<mat-icon>groups</mat-icon>
+                    Workers<mat-icon>groups</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
-                    <p>23 Members</p>
+                    <p><span class="btn-sm btn-warning">23</span> Workers</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
@@ -73,12 +73,12 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
-                <mat-card-title matBadge="RS" matBadgeColor="warn">
-                    Donations<mat-icon>stacked_line_chart</mat-icon>
+                <mat-card-title matBadge="BN" matBadgeColor="warn">
+                    Sales<mat-icon>stacked_line_chart</mat-icon>
                 </mat-card-title>
-                <mat-card-subtitle>This Year</mat-card-subtitle>
+                <mat-card-subtitle>This Month</mat-card-subtitle>
                 <mat-card-content>
-                    <p>RS 230000/-</p>
+                    <p><span class="btn-sm btn-success">2300</span> Bottles</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
@@ -88,12 +88,12 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
-                <mat-card-title matBadge="15" matBadgeColor="warn">
+                <mat-card-title matBadge="17" matBadgeColor="warn">
                     Cities<mat-icon>location_city</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
-                    <p>17 cities</p>
+                    <p><span class="btn-sm btn-warning">17</span> Cities</p>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
@@ -111,7 +111,7 @@
                 <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0','border-top-left-radius':'20px'}">
                     <div class="miniHeader">
                         <h3 style="display: flex;align-items: center;">
-                            <mat-icon style="margin-right: 5px;">person</mat-icon>Volunteers
+                            <mat-icon style="margin-right: 5px;">insights</mat-icon>Orders <span class="btn-sm btn-danger" style="height: 20px;margin-left: 5px;align-items: center;justify-content: center;display: flex;">New</span>
                         </h3>
                     </div>
                     <table mat-table [dataSource]="dataSource">
@@ -162,7 +162,7 @@
                                 <!-- <i class="fa fa-fw fa-pencil"></i>
                                 <i class="fa fa-fw fa-trash"></i> -->
                                 <button mat-button class="mat-elevation-z2 iconBtn bg-danger">
-                                    <mat-icon [ngStyle]="{'color':'white'}">delete</mat-icon>
+                                    <mat-icon [ngStyle]="{'color':'white'}">delete_outline</mat-icon>
                                 </button>
                                 <button mat-button class="mat-elevation-z2 iconBtn bg-warning">
                                     <mat-icon>edit</mat-icon>
@@ -176,7 +176,7 @@
                 <mat-card class="mat-elevation-z2" style="padding: 0;margin:3px;border-top-left-radius:20px">
                     <div class="miniHeader">
                         <h3 style="display: flex;align-items: center;">
-                            <mat-icon style="margin-right: 5px;">wb_sunny</mat-icon>Temperature
+                            <mat-icon style="margin-right: 5px;">pie_chart</mat-icon>Monthly Sales
                         </h3>
                     </div>
                     <app-highchart-graphs></app-highchart-graphs>
@@ -277,11 +277,6 @@
         </div>
         <div class="secondaryHeader">
             <h3>Details</h3>
-        </div>
-        <div class="row">
-            <ng-dygraphs [data]="data" [options]="options"
-                [style]="{'max-height':'inherit','overflow':'inherit','width':'100%'}">
-            </ng-dygraphs>
         </div>
     </div>
     
