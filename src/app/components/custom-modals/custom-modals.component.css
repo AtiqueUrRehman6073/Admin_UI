@@ -1,0 +1,114 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    max-width: 100%;
+    background-color: rgba(40, 45, 49, 0.308);
+    position: absolute;
+    z-index: 1;
+    transition: 1s;
+}
+
+.containerModal {
+    width: 10px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border: 1px solid lightgrey;
+    background-color: rgba(255, 255, 255, 0.918);
+    position: relative;
+    animation-name: modalAnim;
+    animation-duration: 0.5s;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@keyframes modalAnim {
+    0% {
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    1% {
+        background-color: rgba(255, 255, 255, 0.849);
+        width: 10px;
+        height: 250px;
+    }
+
+    100% {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* .containerModal{
+    background: rgba(255, 255, 255, 0.849);
+    border: 1px solid lightgrey;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:500px;
+    height: 250px;
+    margin-top: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: animateRight;
+    animation-duration: 3s;
+}
+@keyframes animateRight {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+  } */
+.modalHeader {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #415e8cd5;
+}
+
+.modalHeader h3 {
+    font-size: 14pt;
+    margin: 0px 0px 0px 5px;
+}
+
+.modalHeader span {
+    cursor: pointer;
+}
+
+.modalHeader h3, .modalHeader span {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.modalBody{
+height: 60%;
+width: 100%;
+padding: 10px;
+}
+
+.modalFooter {
+    border-top: 2px solid lightgray;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footerButtons {
+    margin: 10px;
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.footerButtons button{
+    margin: 5px;
+}

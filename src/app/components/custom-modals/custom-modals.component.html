@@ -1,0 +1,19 @@
+<div class="container" id="modalContainer" (click)="closeModal()">
+    <div class="containerModal" [style.width.px]="width">
+        <div class="modalHeader">
+            <h3>Alert<mat-icon>warning</mat-icon>
+            </h3>
+            <span (click)="closeModal()">
+                <mat-icon>close</mat-icon>
+            </span>
+        </div>
+        <div class="modalBody" [innerHTML]='data'>
+        </div>
+        <div class="modalFooter">
+            <div class="footerButtons">
+                <button class="btn btn-sm btn-secondary" (click)="closeModal()">Cancel</button>
+                <button class="btn btn-sm btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

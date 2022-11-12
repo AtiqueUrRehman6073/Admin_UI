@@ -13,10 +13,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import HotTableModule from 'handsontable';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe,CommonModule } from '@angular/common';
 import { NgDygraphsModule } from 'ng-dygraphs';
 import {HighchartsChartModule} from 'highcharts-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { CustomModalsComponent } from './components/custom-modals/custom-modals.component';
+import { CustomOffCanvasComponent } from './components/custom-off-canvas/custom-off-canvas.component';
 
 registerAllModules();
 @NgModule({
@@ -26,10 +29,13 @@ registerAllModules();
     SideMenuComponent,
     CustomGridComponent,
     DashboardComponent,
-    HighchartGraphsComponent
+    HighchartGraphsComponent,
+    CustomModalsComponent,
+    CustomOffCanvasComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -38,7 +44,12 @@ registerAllModules();
     NgDygraphsModule,
     NgbModule,
     HttpClientModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
   ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]

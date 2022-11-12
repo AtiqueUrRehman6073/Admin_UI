@@ -1,4 +1,6 @@
 <div class="containerCustom">
+        <app-custom-modals [width]='modalWidth' [data]='modaldata'></app-custom-modals>
+        <app-custom-off-canvas [width]='canvasWidth'></app-custom-off-canvas>
     <div class="row">
         <div class="col-12 headerLine">
             <marquee class="marquee">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -12,7 +14,7 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="24" matBadgeColor="warn">
-                    <mat-icon>insights</mat-icon>New Actitvities
+                    Actitvities<mat-icon>insights</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Month</mat-card-subtitle>
                 <mat-card-content>
@@ -27,7 +29,7 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="5" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>New Members
+                    New Members<mat-icon>group_add</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Month</mat-card-subtitle>
                 <mat-card-content>
@@ -42,7 +44,7 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="54" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>Total Events
+                    Events<mat-icon>stacked_bar_chart</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
@@ -50,14 +52,14 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
-                    <button mat-raised-button>DETAILS</button>
+                    <button mat-raised-button (click)="showCustomModal()">DETAILS</button>
                 </mat-card-actions>
             </mat-card>
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="23" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>Teams
+                    Teams<mat-icon>groups</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
@@ -65,14 +67,14 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
-                    <button mat-raised-button>DETAILS</button>
+                    <button mat-raised-button (click)="showCustomOffCanvas()">DETAILS</button>
                 </mat-card-actions>
             </mat-card>
         </div>
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="RS" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>Total Donations
+                    Donations<mat-icon>stacked_line_chart</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
@@ -87,7 +89,7 @@
         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
             <mat-card class="mat-elevation-z8">
                 <mat-card-title matBadge="15" matBadgeColor="warn">
-                    <mat-icon>groups</mat-icon>Cities
+                    Cities<mat-icon>location_city</mat-icon>
                 </mat-card-title>
                 <mat-card-subtitle>This Year</mat-card-subtitle>
                 <mat-card-content>
@@ -100,15 +102,17 @@
             </mat-card>
         </div>
     </div>
-    <div class="secondaryContainer mat-elevation-z2">
+    <div class="secondaryContainer mat-elevation-z2" [style]="{'border-top-left-radius':'20px'}">
         <div class="secondaryHeader">
             <h3>General Details</h3>
         </div>
         <div class="row customRowHeight">
             <div class="col-lg-6 col-md-12 col-sm-12" [style]="{'height':'inherit','overflow':'inherit'}">
-                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0'}">
+                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0','border-top-left-radius':'20px'}">
                     <div class="miniHeader">
-                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">person</mat-icon>Volunteers</h3>
+                        <h3 style="display: flex;align-items: center;">
+                            <mat-icon style="margin-right: 5px;">person</mat-icon>Volunteers
+                        </h3>
                     </div>
                     <table mat-table [dataSource]="dataSource">
                         <!-- Position Column -->
@@ -142,9 +146,11 @@
                         aria-label="Select page of periodic elements">
                     </mat-paginator>
                 </mat-card>
-                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0'}">
+                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0','height':'320px','border-top-left-radius':'20px'}">
                     <div class="miniHeader">
-                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">folder</mat-icon>Files</h3>
+                        <h3 style="display: flex;align-items: center;">
+                            <mat-icon style="margin-right: 5px;">folder</mat-icon>Files
+                        </h3>
                     </div>
                     <mat-list>
                         <div mat-subheader>Folders</div>
@@ -155,17 +161,23 @@
                             <div style="float: right;color: grey;">
                                 <!-- <i class="fa fa-fw fa-pencil"></i>
                                 <i class="fa fa-fw fa-trash"></i> -->
-                                <button mat-button class="mat-elevation-z2 iconBtn bg-danger"><mat-icon [ngStyle]="{'color':'white'}">delete</mat-icon></button>
-                                <button mat-button class="mat-elevation-z2 iconBtn bg-warning"><mat-icon>edit</mat-icon></button>
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-danger">
+                                    <mat-icon [ngStyle]="{'color':'white'}">delete</mat-icon>
+                                </button>
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-warning">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
                             </div>
                         </mat-list-item>
                     </mat-list>
                 </mat-card>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12" [style]="{'overflow':'inherit'}">
-                <mat-card class="mat-elevation-z2" style="padding: 0;margin:3px">
+                <mat-card class="mat-elevation-z2" style="padding: 0;margin:3px;border-top-left-radius:20px">
                     <div class="miniHeader">
-                        <h3 style="display: flex;align-items: center;"><mat-icon style="margin-right: 5px;">wb_sunny</mat-icon>Temperature</h3>
+                        <h3 style="display: flex;align-items: center;">
+                            <mat-icon style="margin-right: 5px;">wb_sunny</mat-icon>Temperature
+                        </h3>
                     </div>
                     <app-highchart-graphs></app-highchart-graphs>
                 </mat-card>
@@ -177,7 +189,7 @@
                             </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <h5 style="font-size: 16pt;font-weight:600;margin-left:10px;font-family: monospace;">
-                                    Active Cilents  </h5>
+                                    Active Cilents </h5>
                                 <button class="btn btn-sm btn-info">
                                     <mat-icon [ngStyle]="{'color':'white'}">groups</mat-icon>
                                 </button>
@@ -215,8 +227,6 @@
                             <p style="font-weight: 500;font-family: monospace;margin-left: 8px;color:grey">2600</p>
                         </mat-card>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <mat-card class="mat-elevation-z4 smCard">
                             <div class="miniHeader">
@@ -269,8 +279,10 @@
             <h3>Details</h3>
         </div>
         <div class="row">
-            <ng-dygraphs [data]="data" [options]="options" [style]="{'max-height':'inherit','overflow':'inherit','width':'100%'}">
+            <ng-dygraphs [data]="data" [options]="options"
+                [style]="{'max-height':'inherit','overflow':'inherit','width':'100%'}">
             </ng-dygraphs>
         </div>
     </div>
+    
 </div>

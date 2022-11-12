@@ -1,7 +1,7 @@
 .mat-card-title{
     background-color: #415e8cde;
     color: #fff;
-    padding: 5px;
+    padding: 5px 8px 5px 8px;
     font-size: 12pt;
     font-weight: 200;
     font-family: monospace !important;
@@ -75,7 +75,7 @@
     background-color: #fff;
 }
 .smCard{
-    height: 125px;
+    height: 130px;
     margin: 5px 0px 5px 0px;
 }
 table{

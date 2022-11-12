@@ -4,6 +4,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import swal from 'sweetalert';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import * as $ from 'jquery'
+import { ToastServiceService } from 'src/app/services/toast-service/toast-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +14,11 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements AfterViewInit {
+  
+  constructor(private _snackBar: MatSnackBar, private modalService: NgbModal,private toastr: ToastrService, private customAlertService:ToastServiceService) { }
+  modalWidth:number = 500;
+  modaldata:any = null;
+  canvasWidth:number = 400;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   data = [[new Date("2008/05/07"), 75],
@@ -36,12 +44,20 @@ export class DashboardComponent implements AfterViewInit {
     },
   ];
   options = { width: 800, labels: ['Date', 'Temperature'], xlabel: 'X label text', ylabel: 'Y label text', title: 'Donations', animatedZooms: true, pointSize: 4 }
+  
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
   ngAfterViewInit() {
+    this.showSuccess();
     this.dataSource.paginator = this.paginator;
   }
+  /////////   Toasts Functions   ///////////
+  showSuccess() {
+    this.toastr.success('Welcome to My-Admin, Have a cool Trip!!', 'Toastr fun!');
+  }
+
+  ////////   Swal Functions  ///////////
   showAlert() {
     swal({
       title: "Are you sure?",
@@ -58,18 +74,27 @@ export class DashboardComponent implements AfterViewInit {
         }
       });
   }
+
+  ////////   Snackbar Functions  ///////////
   durationInSeconds = 2;
-
-  constructor(private _snackBar: MatSnackBar, private modalService: NgbModal) { }
-
   openSnackBar() {
     this._snackBar.openFromComponent(PizzaPartyComponent, {
       duration: this.durationInSeconds * 1000,
     });
   }
+
+  ////////   Modals  ///////////
   openModal() {
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.name = 'World';
+  }
+  showCustomModal(){
+    this.modaldata = '<h1 style="background:red">Hello, How are you doing today......?<h1><h4>I hope doing well.......eh?</h4>';
+    this.customAlertService.showModal();
+  }
+
+  showCustomOffCanvas(){
+    $("#offCanvasContainer").show();
   }
 }
 

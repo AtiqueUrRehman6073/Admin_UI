@@ -28,7 +28,8 @@
               "src/styles.css",
               "./node_modules/handsontable/dist/handsontable.full.css",
               "./node_modules/handsontable/dist/handsontable.css",
-              "./node_modules/dygraphs/dist/dygraph.min.css"
+              "./node_modules/dygraphs/dist/dygraph.min.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "./node_modules/handsontable/dist/handsontable.full.js",
