@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { CustomModalsComponent } from './components/custom-modals/custom-modals.component';
 import { CustomOffCanvasComponent } from './components/custom-off-canvas/custom-off-canvas.component';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 registerAllModules();
 @NgModule({
@@ -51,7 +52,7 @@ registerAllModules();
       preventDuplicates: true,
     })
   ],
-  providers: [DecimalPipe],
+  providers: [DecimalPipe,{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
