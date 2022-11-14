@@ -1,0 +1,63 @@
+.containerCustom{
+    padding: 200px 0px 0px 0px;
+    background-image: linear-gradient(to bottom right, #8fd5f593,#0c4db4e8 );
+    /* background-color: rgba(33, 107, 168, 0.658); */
+}
+.card {
+    width: 30%;
+    min-width: 450px;
+    margin: auto;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.card-header {
+    background-color: #5282afb9;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 20px;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px 0px 0px !important;
+}
+.auth-form {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.zoomer{
+    animation: zoom-in-zoom-out 200ms ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.15, 1.15);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.auth-field-width {
+    margin: 10px;
+    width: 100%;
+}
+.bubbleDiv{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 150px;
+    border-radius: 50px;
+    margin-right: auto;
+}

@@ -13,7 +13,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ng-dygraphs-chart-container *{
     width: 100% !important;
 }
-h1,h2,h3,h4,h5,h6,p,span{
+h1,h2,h3,h4,h5,h6,p,span,td,th,text,button{
     font-family: monospace !important;
 }
 table{
@@ -160,4 +160,60 @@ table{
     background-color: #b0c6da3f;
     transition: 0.5s;
     cursor: pointer;
+}
+td.mat-cell:last-of-type{
+padding: 0 !important;
+}
+.customBtn{
+    line-height: normal;
+    margin:5px !important;
+    padding: 8px !important;
+    font-size: 12pt !important;
+    background-color: #5282afb9;
+    color: #fff;
+    font-size: 8pt;
+    padding: 0px;
+}
+.customBtnSm{
+    line-height: normal;
+    margin:3px !important;
+    padding: 5px !important;
+    background-color: #5282afb9;
+    color: #fff;
+    font-size: 8pt;
+    padding: 0px;
+}
+.customBtnLg{
+    margin:10px !important;
+    line-height: normal;
+    padding: 10px !important;
+    font-size: 16pt !important;
+    background-color: #5282afb9;
+    color: #fff;
+    font-size: 8pt;
+    padding: 0px;
+}
+.btn-danger,.bg-danger{
+background-color: rgba(255, 0, 0, 0.685) !important;
+}
+.btn-info,.bg-info{
+    background-color: rgba(51, 85, 136, 0.678) !important;
+    color: white;
+}
+.shaker{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

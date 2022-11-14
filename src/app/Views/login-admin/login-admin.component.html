@@ -1,0 +1,45 @@
+<div class="containerCustom">
+    <div id="bubble" class="bubbleDiv" style="background-color: rgba(223, 226, 34, 0.384);"></div>
+    <div id="bubbleB" class="bubbleDiv" style="background-color: rgba(34, 226, 34, 0.384);"></div>
+    <div id="bubbleC" class="bubbleDiv" style="background-color: rgba(34, 117, 226, 0.384);"></div>
+    <div id="bubbleD" class="bubbleDiv" style="background-color: rgba(255, 81, 0, 0.418);"></div>
+    <div class="loginFormContainer">
+        <div class="card" id="loginCard">
+            <div class="card-header d-flex justify-content-center">
+                <h1>Login Form</h1><mat-icon>lock_reset</mat-icon>
+            </div>
+            <div class="card-body">
+                    <form class="auth-form">
+                            <mat-form-field class="auth-field-width" appearance="fill">
+                                <mat-label>Email</mat-label>
+                                <input autofocus type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcherEmail"
+                                    placeholder="Ex. pat@example.com">
+                                <mat-hint>Enter authorized email!</mat-hint>
+                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                    Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="auth-field-width" appearance="fill">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput [formControl]="passwordFormControl"
+                                    [errorStateMatcher]="matcherPass" placeholder="abc_123">
+                                <mat-hint>Enter authorized password!</mat-hint>
+                                <mat-error *ngIf="!passwordFormControl.hasError('required')">
+                                    Please enter a valid password
+                                </mat-error>
+                                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                    Password is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </form>
+            </div>
+            <div class="card-footer d-flex flex-row-reverse">
+                <button class="btn btn-sm customBtn" (click)="userAuth()">Submit</button>
+                <!-- <button class="btn btn-sm customBtn" style="background-color: rgb(217, 223, 230);color:#000">Cancel</button> -->
+            </div>
+        </div>
+    </div>
+</div>

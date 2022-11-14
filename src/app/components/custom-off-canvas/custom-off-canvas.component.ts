@@ -2,10 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-
-
-
-
+import { ToastrService } from 'ngx-toastr';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -21,7 +18,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class CustomOffCanvasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr:ToastrService) { }
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$'),Validators.minLength(8)]);
 
@@ -38,6 +35,13 @@ export class CustomOffCanvasComponent implements OnInit {
   }
   closeOffCanvas(){
     $("#offCanvasContainer").hide();
+  }
+  toWorkerDetails(){
+    $('#imgLock').addClass('shaker');
+    setTimeout(()=>{
+      $('#imgLock').removeClass('shaker');
+    },500);
+    this.toastr.error('Invalid Credentials','Error');
   }
 
 }

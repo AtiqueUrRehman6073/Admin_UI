@@ -7,13 +7,13 @@
             </span>
         </div>
         <div class="authContainer">
-            <div class="lockIcon">
+            <div class="lockIcon" id="imgLock">
                 <mat-icon class="icon-display">lock_outline</mat-icon>
             </div>
             <form class="auth-form">
                 <mat-form-field class="auth-field-width" appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcherEmail"
+                    <input autofocus type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcherEmail"
                         placeholder="Ex. pat@example.com">
                     <mat-hint>Enter authorized email!</mat-hint>
                     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -35,7 +35,9 @@
                         Password is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <button class="mat-focus-indicator mat-raised-button mat-button-base">Proceed</button>
+                <div class="d-flex flex-row-reverse">
+                    <button class="mat-focus-indicator mat-raised-button mat-button-base" style="color: #fff;background-color: #5282afb9;" (click)="toWorkerDetails()">Proceed</button>
+                </div>
             </form>
         </div>
     </div>

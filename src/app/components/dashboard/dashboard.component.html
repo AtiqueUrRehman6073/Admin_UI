@@ -1,6 +1,6 @@
 <div class="containerCustom">
-        <app-custom-modals [width]='modalWidth' [data]='modaldata'></app-custom-modals>
-        <app-custom-off-canvas [width]='canvasWidth'></app-custom-off-canvas>
+    <app-custom-modals [width]='modalWidth' [data]='modaldata'></app-custom-modals>
+    <app-custom-off-canvas [width]='canvasWidth'></app-custom-off-canvas>
     <div class="row">
         <div class="col-12 headerLine">
             <marquee class="marquee">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -82,7 +82,7 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button>SHARE</button>
-                    <button mat-raised-button>DETAILS</button>
+                    <button mat-raised-button (click)="showDanger()">DETAILS</button>
                 </mat-card-actions>
             </mat-card>
         </div>
@@ -108,10 +108,13 @@
         </div>
         <div class="row customRowHeight">
             <div class="col-lg-6 col-md-12 col-sm-12" [style]="{'height':'inherit','overflow':'inherit'}">
-                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0','border-top-left-radius':'20px'}">
+                <mat-card class="mat-elevation-z2"
+                    [style]="{'margin':'5px','padding':'0','border-top-left-radius':'20px'}">
                     <div class="miniHeader">
                         <h3 style="display: flex;align-items: center;">
-                            <mat-icon style="margin-right: 5px;">insights</mat-icon>Orders <span class="btn-sm btn-danger" style="height: 20px;margin-left: 5px;align-items: center;justify-content: center;display: flex;">New</span>
+                            <mat-icon style="margin-right: 5px;">insights</mat-icon>Orders <span
+                                class="btn-sm btn-danger"
+                                style="height: 20px;margin-left: 5px;align-items: center;justify-content: center;display: flex;">New</span>
                         </h3>
                     </div>
                     <table mat-table [dataSource]="dataSource">
@@ -138,7 +141,16 @@
                             <th mat-header-cell *matHeaderCellDef> Symbol </th>
                             <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
                         </ng-container>
-
+                        <ng-container matColumnDef="icon">
+                            <th mat-header-cell *matHeaderCellDef> Actions </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-info">
+                                    <mat-icon [ngStyle]="{'color':'white'}">{{element.iconEdit}}</mat-icon>
+                                </button>
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-danger">
+                                    <mat-icon [ngStyle]="{'color':'white'}">{{element.iconDelete}}</mat-icon>
+                                </button></td>
+                        </ng-container>
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                     </table>
@@ -146,7 +158,8 @@
                         aria-label="Select page of periodic elements">
                     </mat-paginator>
                 </mat-card>
-                <mat-card class="mat-elevation-z2" [style]="{'margin':'5px','padding':'0','height':'320px','border-top-left-radius':'20px'}">
+                <mat-card class="mat-elevation-z2"
+                    [style]="{'margin':'5px','padding':'0','height':'320px','border-top-left-radius':'20px'}">
                     <div class="miniHeader">
                         <h3 style="display: flex;align-items: center;">
                             <mat-icon style="margin-right: 5px;">folder</mat-icon>Files
@@ -159,13 +172,11 @@
                             <div mat-line>{{folder.name}}</div>
                             <div mat-line> {{folder.updated | date}} </div>
                             <div style="float: right;color: grey;">
-                                <!-- <i class="fa fa-fw fa-pencil"></i>
-                                <i class="fa fa-fw fa-trash"></i> -->
+                                <button mat-button class="mat-elevation-z2 iconBtn bg-info">
+                                    <mat-icon [ngStyle]="{'color':'white'}">edit</mat-icon>
+                                </button>
                                 <button mat-button class="mat-elevation-z2 iconBtn bg-danger">
                                     <mat-icon [ngStyle]="{'color':'white'}">delete_outline</mat-icon>
-                                </button>
-                                <button mat-button class="mat-elevation-z2 iconBtn bg-warning">
-                                    <mat-icon>edit</mat-icon>
                                 </button>
                             </div>
                         </mat-list-item>
@@ -279,5 +290,5 @@
             <h3>Details</h3>
         </div>
     </div>
-    
+
 </div>

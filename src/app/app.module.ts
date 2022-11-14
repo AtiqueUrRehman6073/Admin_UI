@@ -21,6 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { CustomModalsComponent } from './components/custom-modals/custom-modals.component';
 import { CustomOffCanvasComponent } from './components/custom-off-canvas/custom-off-canvas.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { LoginAdminComponent } from './Views/login-admin/login-admin.component';
+import { OrdersComponent } from './Views/orders/orders.component';
 
 registerAllModules();
 @NgModule({
@@ -32,7 +34,9 @@ registerAllModules();
     DashboardComponent,
     HighchartGraphsComponent,
     CustomModalsComponent,
-    CustomOffCanvasComponent
+    CustomOffCanvasComponent,
+    LoginAdminComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
