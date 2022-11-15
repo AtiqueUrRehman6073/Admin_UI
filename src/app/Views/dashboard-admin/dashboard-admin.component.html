@@ -1,4 +1,12 @@
 <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
-<div class="containerCustom">
+<div class="searcher" id="searcherID">
+    <div class="closer" (click)="closeSearcher()">
+        <mat-icon [ngStyle]="{'color':'white','cursor':'pointer'}">close</mat-icon>
+    </div>
+    <div class="input-group">
+        <input class="form-control" placeholder="Enter something to search . . ."/>
+    </div>
+</div>
+<div class="containerCustom" id="pageSkewer">
     <app-side-menu></app-side-menu>
 </div>

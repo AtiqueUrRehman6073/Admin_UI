@@ -23,6 +23,7 @@ import { CustomOffCanvasComponent } from './components/custom-off-canvas/custom-
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { LoginAdminComponent } from './Views/login-admin/login-admin.component';
 import { OrdersComponent } from './Views/orders/orders.component';
+import { TestBGComponent } from './components/test-bg/test-bg.component';
 
 registerAllModules();
 @NgModule({
@@ -36,7 +37,8 @@ registerAllModules();
     CustomModalsComponent,
     CustomOffCanvasComponent,
     LoginAdminComponent,
-    OrdersComponent
+    OrdersComponent,
+    TestBGComponent
   ],
   imports: [
     BrowserModule,

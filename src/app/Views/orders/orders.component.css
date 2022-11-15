@@ -1,0 +1,13 @@
+.topBar{
+    background-color: #073277a4;
+    padding: 5px 20px 5px 20px;
+}
+.topBar *{
+    color: #fff;
+}
+.mat-icon{
+    cursor: pointer;
+}
+.file{
+    
+}

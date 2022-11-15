@@ -23,6 +23,53 @@
 <body class="mat-typography">
   <app-root>
   </app-root>
+  <!-- <script src="JsFiles/js/demo4.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <script>
+    'use strict';
+
+    // var pageContainer = $('#pageID'),
+    //   openCtrl = $('#btn-search'),
+    //   closeCtrl = $('#btn-search-close'),
+    //   searchContainer = $('#searchID'),
+    //   inputSearch = $('.search__input'),
+    var lastFocusedElement = false;
+
+    function init() {
+      initEvents();
+    }
+
+    function initEvents() {
+      $('#btn-search').click(()=>{openSearch()});
+      $('#btn-search-close').click(()=>{closeSearch()});
+      document.addEventListener('keyup', function (ev) {
+        // escape key.
+        if (ev.keyCode == 27) {
+          closeSearch();
+        }
+      });
+    }
+
+    function openSearch() {
+      lastFocusedElement = document.activeElement;
+      $('#pageID').classList.add('page--move');
+      $('#searchID').classList.add('search--open');
+      $('.search__input').focus();
+    }
+
+    function closeSearch() {
+      $('#pageID').classList.remove('page--move');
+      $('#searchID').classList.remove('search--open');
+      $('.search__input').blur();
+      $('.search__input').value = '';
+      if (lastFocusedElement) { // restore focus
+        lastFocusedElement.focus();
+      }
+    }
+
+    init();
+  </script>
 </body>
 
 </html>

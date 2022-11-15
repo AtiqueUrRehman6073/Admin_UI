@@ -1,1 +1,8 @@
-<p>orders works!</p>
+<mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
+<div class="containerCustom">
+    <div class="topBar d-flex justify-content-between">
+        <mat-icon (click)="toDashboard()">arrow_back</mat-icon>
+        <mat-icon (click)="toDashboard()">close</mat-icon>
+    </div>
+</div>
+<!-- <app-test-bg></app-test-bg> -->

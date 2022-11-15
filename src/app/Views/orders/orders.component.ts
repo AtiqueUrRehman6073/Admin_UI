@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
+  loader:boolean = true;
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.loader = false;
+    },1500);
+  }
+  toDashboard(){
+    this.router.navigateByUrl('dashboard');
   }
 
 }

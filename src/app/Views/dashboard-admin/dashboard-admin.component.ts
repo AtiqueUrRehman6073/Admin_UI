@@ -17,5 +17,8 @@ export class DashboardAdminComponent implements OnInit {
       this.loader = false;
     },1500);
   }
+  closeSearcher(){
+    
+  }
 
 }
