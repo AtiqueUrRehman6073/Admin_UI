@@ -7,6 +7,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import * as $ from 'jquery'
 import { ToastServiceService } from 'src/app/services/toast-service/toast-service.service';
+import { CanvasJS } from 'src/assets/canvasjs.angular.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -47,10 +48,34 @@ export class DashboardComponent implements AfterViewInit {
   
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-
+  doughnutChart:any;
   ngAfterViewInit() {
     this.showSuccess();
     this.dataSource.paginator = this.paginator;
+    this.doughnutChart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      title:{
+        text: "Accounts (Cash)",
+        horizontalAlign: "left"
+      },
+      data: [{
+        type: "doughnut",
+        startAngle: 60,
+        innerRadius: 30,
+        indexLabelFontSize: 17,
+        indexLabel: "{label} - #percent%",
+        toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+        dataPoints: [
+          { y: 67, label: "Received" },
+          { y: 28, label: "Pending" },
+          { y: 10, label: "Advance" },
+          { y: 7, label: "Clear"},
+          { y: 6, label: "Stuck"},
+          { y: 15, label: "Expenses"}
+        ]
+      }]
+    });
+    this.doughnutChart.render();
   }
   /////////   Toasts Functions   ///////////
   showSuccess() {
@@ -99,6 +124,38 @@ export class DashboardComponent implements AfterViewInit {
   showCustomOffCanvas(){
     $("#offCanvasContainer").show();
   }
+
+  ////////   ChartJS   //////////////
+
+  dps = [{ x: 10, y: 10 }, { x: 20, y: 13 }, { x: 30, y: 18 }, { x: 40, y: 20 }, { x: 50, y: 17 }, { x: 60, y: 10 }, { x: 70, y: 13 }, { x: 80, y: 18 }, { x: 90, y: 20 }, { x: 100, y: 17 }];
+  chart: any;
+
+  chartOptions = {
+    exportEnabled: true,
+    title: {
+      text: "CPU Performance"
+    },
+    data: [{
+      type: "spline",
+      markerSize: 1,
+      dataPoints: this.dps
+    }],
+  }
+  getChartInstance(chart: object) {
+    this.chart = chart;
+    setTimeout(this.updateChart, 100); //Chart updated every 1 second
+  }
+  updateChart = () => {
+    var yVal = this.dps[this.dps.length - 5].y + Math.round(15 + Math.random() * (-5-3));
+    this.dps.push({ x: this.dps[this.dps.length - 1].x + 1, y: yVal - 1 });
+
+    if (this.dps.length > 10) {
+      this.dps.shift();
+    }
+    this.chart.render();
+    setTimeout(this.updateChart, 800); //Chart updated every 1 second
+  }
+  
 }
 
 @Component({

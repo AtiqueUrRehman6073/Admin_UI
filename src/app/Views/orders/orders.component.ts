@@ -9,15 +9,15 @@ import * as $ from 'jquery';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
-  loader:boolean = true;
+  loader: boolean = true;
   ngOnInit(): void {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.loader = false;
-    },1500);
+    }, 1500);
   }
-  toDashboard(){
+  toDashboard() {
     this.router.navigateByUrl('dashboard');
   }
 

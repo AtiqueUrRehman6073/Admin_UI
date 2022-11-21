@@ -126,30 +126,31 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" aria-label="Search"
                         aria-describedby="basic-addon2">
-                    <span class="input-group-text" id="basic-addon2" (click)="toggleToSearch()"><i class="fa fa-search"></i></span>
+                    <span class="input-group-text" id="basic-addon2" style="cursor: pointer;"
+                        (click)="toggleToSearch()"><i class="fa fa-search"></i></span>
                 </div>
             </form>
         </span>
         <img src="../../../assets/Images/Avatar.jfif" alt="Avatar" class="avatarMini">
-        <mat-menu #notification ="matMenu">
-                <button mat-menu-item>
-                    <mat-icon>person</mat-icon>
-                    <span>Message-1</span>
-                </button>
-                <button mat-menu-item>
-                    <mat-icon>person</mat-icon>
-                    <span>Message-2</span>
-                </button>
-                <button mat-menu-item>
-                    <mat-icon>person</mat-icon>
-                    <span>Message-3</span>
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item>
-                        <mat-icon>person</mat-icon>
-                        <span>Show All Notifications</span>
-                    </button>
-            </mat-menu>
+        <mat-menu #notification="matMenu">
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Message-1</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Message-2</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Message-3</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Show All Notifications</span>
+            </button>
+        </mat-menu>
         <button mat-icon-button [matMenuTriggerFor]="notification" aria-label="Example icon-button with a menu">
             <mat-icon>notifications</mat-icon>
         </button>
@@ -170,7 +171,7 @@
                 <span>Notifications</span>
             </button>
         </mat-menu>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with exit icon">
             <mat-icon>exit_to_app</mat-icon>
         </button>
     </mat-toolbar>

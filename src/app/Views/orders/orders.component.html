@@ -2,7 +2,28 @@
 <div class="containerCustom">
     <div class="topBar d-flex justify-content-between">
         <mat-icon (click)="toDashboard()">arrow_back</mat-icon>
+        <div class="breadCrumbs">
+            <mat-icon style="color:#fff;transform:scale(0.75)">keyboard_double_arrow_right</mat-icon> <span>Admin</span>
+            <mat-icon style="color:#fff;transform:scale(0.75)">keyboard_double_arrow_right</mat-icon>
+            <span>Dashboard</span>
+            <mat-icon style="color:#fff;transform:scale(0.75)">keyboard_double_arrow_right</mat-icon>
+            <span>Orders</span>
+        </div>
         <mat-icon (click)="toDashboard()">close</mat-icon>
     </div>
+    <div class="filesContainer">
+        <div class="row customMiniContainer">
+            <div class="col-xl-1 col-lg-4 col-md-4 col-sm-6">
+                <mat-card class="mat-elevation-z12">
+                    <mat-card-content style="text-align: center;">
+                        <i class="fa fa-3x fa-file-excel"></i>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button style="padding:5px;">Records.xlsx</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <!-- <div style="background-color: #31ce36 !important;width: 400px;height: 200px;"></div> -->
+        </div>
+    </div>
 </div>
-<!-- <app-test-bg></app-test-bg> -->

@@ -24,6 +24,8 @@ import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/materi
 import { LoginAdminComponent } from './Views/login-admin/login-admin.component';
 import { OrdersComponent } from './Views/orders/orders.component';
 import { TestBGComponent } from './components/test-bg/test-bg.component';
+import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 registerAllModules();
 @NgModule({
@@ -38,7 +40,8 @@ registerAllModules();
     CustomOffCanvasComponent,
     LoginAdminComponent,
     OrdersComponent,
-    TestBGComponent
+    TestBGComponent,
+    CanvasJSChart,
   ],
   imports: [
     BrowserModule,
