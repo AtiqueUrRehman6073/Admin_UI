@@ -54,4 +54,7 @@ export class SideMenuComponent implements OnInit {
   toEmployeeListing(){
     this.router.navigateByUrl('employees/workers');
   }
+  toNewMember(){
+    this.router.navigateByUrl('employees/new');
+  }
 }

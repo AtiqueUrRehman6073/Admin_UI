@@ -1,0 +1,159 @@
+<div class="main-block mat-elevation-z4">
+    <form action="/">
+        <h1 class="customHeader">New Member Details</h1>
+        <p>Please fill in the details carefully . . . </p>
+        <hr>
+        <div class="personal-details row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>First Name :<span class="required">*</span></label>
+                <input class="first-name" type="text" name="name" placeholder="First Name" required />
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>Last Name :<span class="required">*</span></label>
+                <input type="text" name="name" placeholder="Last Name" required />
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>Contact Info:<span class="required">*</span></label>
+                <input class="seminar-title" type="text" name="name" placeholder="Cell Phone no." required />
+            </div>
+        </div>
+        <div class="question-block">
+            <p class="question">How old the person is?<span class="required">*</span></p>
+            <div class="answer row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rOne" name="how-hear" required />
+                    <label for="rOne" class="radio">20-25</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rTwo" name="how-hear" required />
+                    <label for="rTwo" class="radio">26-30</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rThree" name="how-hear" required />
+                    <label for="rThree" class="radio">31-35</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rFour" name="how-hear" required />
+                    <label for="rFour" class="radio">36-40</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rFive" name="how-hear" required />
+                    <label for="rFive" class="radio">41-50</label>
+                </div>
+            </div>
+        </div>
+        <div class="question-block">
+            <p class="question">What will be the role of the employee in the company?</p>
+            <div class="answer row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioOne" name="assessment" />
+                    <label for="radioOne" class="radio">Manager</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioTwo" name="assessment" />
+                    <label for="radioTwo" class="radio">Accountant</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioThree" name="assessment" />
+                    <label for="radioThree" class="radio">Plant-Worker</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioFour" name="assessment" />
+                    <label for="radioFour" class="radio">Driver</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioFive" name="assessment" />
+                    <label for="radioFive" class="radio">Others</label>
+                </div>
+            </div>
+        </div>
+        <div class="statements-block">
+            <p>How much do you agree with the following statements regarding the new hiring?<span
+                    class="required">*</span>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="first-col"></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Neutral</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first-col">Any serious medical condition in last 1 year(s)?</td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">Will be working for more than an year?</td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">The information provided above is 100% correct so far...</td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div class="detailsBox">
+            <div class="personal-details row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <label>Age :<span class="required">*</span></label>
+                    <input class="first-name" type="text" name="name" placeholder="Age" required />
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-12">
+                    <label>Gender :<span class="required">*</span></label>
+                    <input type="text" name="name" placeholder="Gender" required />
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <label>Current Residance:<span class="required">*</span></label>
+                    <input class="seminar-title" type="text" name="name" placeholder="Street Address" required />
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <label>Permanent Address<span class="required">*</span></label>
+                    <input class="seminar-title" type="text" name="name" placeholder="Residing Address" required />
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                    <label>Permanent Address<span class="required">*</span></label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                        <label>Employee's Picture<span class="required">*</span></label>
+                        <textarea rows="4" required></textarea>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="question-block row">
+            <div class="col-xl-4">
+                <p class="question">Do you have further comments or suggestions?<span
+                        class="required">*</span><small>And
+                        thank you again for filling out the seminar evaluation form</small></p>
+            </div>
+            <div class="col-xl-8">
+                <div class="answer">
+                    <textarea rows="5" required></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="btn-block">
+            <button type="submit" href="/">Submit</button>
+        </div>
+    </form>
+</div>

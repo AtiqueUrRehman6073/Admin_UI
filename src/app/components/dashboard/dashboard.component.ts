@@ -50,6 +50,9 @@ export class DashboardComponent implements AfterViewInit {
   paginator!: MatPaginator;
   doughnutChart:any;
   ngAfterViewInit() {
+    setTimeout(()=>{
+      $("#offCanvasContainer").hide();
+    },50);
     this.showSuccess();
     this.dataSource.paginator = this.paginator;
     this.doughnutChart = new CanvasJS.Chart("chartContainer", {
