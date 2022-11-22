@@ -12,18 +12,18 @@
         <mat-icon (click)="toDashboard()">close</mat-icon>
     </div>
     <div class="filesContainer">
+        <!-- <app-custom-modals [width]='modalWidth' [data]='modaldata'></app-custom-modals> -->
         <div class="row customMiniContainer">
-            <div class="col-xl-1 col-lg-4 col-md-4 col-sm-6">
+            <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2" *ngFor="let item of files">
                 <mat-card class="mat-elevation-z12">
                     <mat-card-content style="text-align: center;">
                         <i class="fa fa-3x fa-file-excel"></i>
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-raised-button style="padding:5px;">Records.xlsx</button>
+                        <button mat-raised-button style="padding:5px;" (click)="enterPass(item)">{{item}}</button>
                     </mat-card-actions>
                 </mat-card>
             </div>
-            <!-- <div style="background-color: #31ce36 !important;width: 400px;height: 200px;"></div> -->
         </div>
     </div>
 </div>

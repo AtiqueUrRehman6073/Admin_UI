@@ -48,4 +48,10 @@ export class SideMenuComponent implements OnInit {
     this.router.navigateByUrl('orders');
     console.log($(location).attr("href"));
   }
+  toNewOrder(){
+    this.router.navigateByUrl('orders/new');
+  }
+  toEmployeeListing(){
+    this.router.navigateByUrl('employees/workers');
+  }
 }

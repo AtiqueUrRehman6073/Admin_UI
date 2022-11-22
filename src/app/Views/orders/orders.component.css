@@ -59,6 +59,12 @@
     font-size: 8pt;
     padding: 0px;
 }
+.customMiniContainer .col-lg-1{
+    margin: 10px 0px 10px 0px;
+}
+i{
+    color: green !important;
+}
 #canvasjs-angular-chart-container-0{
 height: 150px !important;
 }

@@ -44,7 +44,7 @@
                                 </span>
                                 <span>History</span>
                             </mat-list-item>
-                            <mat-list-item class="customMenuLi">
+                            <mat-list-item class="customMenuLi" (click)="toNewOrder()">
                                 <span>
                                     <mat-icon [ngStyle]="{'color':'white'}">add_chart</mat-icon>
                                 </span>
@@ -64,7 +64,7 @@
                                     Employees
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
-                            <mat-list-item class="customMenuLi">
+                            <mat-list-item class="customMenuLi" (click)="toEmployeeListing()">
                                 <span>
                                     <mat-icon [ngStyle]="{'color':'white'}">groups</mat-icon>
                                 </span>

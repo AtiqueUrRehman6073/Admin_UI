@@ -1,0 +1,127 @@
+<div class="main-block mat-elevation-z4">
+    <form action="/">
+        <h1 class="customHeader">New Order Details</h1>
+        <p>Please fill in the details carefully . . . </p>
+        <hr>
+        <div class="personal-details row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>First Name :<span class="required">*</span></label>
+                <input class="first-name" type="text" name="name" placeholder="First Name" required />
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>Last Name :<span class="required">*</span></label>
+                <input type="text" name="name" placeholder="Last Name" required />
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <label>Seminar Title:<span class="required">*</span></label>
+                <input class="seminar-title" type="text" name="name" placeholder="Seminar Title" required />
+            </div>
+        </div>
+        <div class="question-block">
+            <p class="question">How did you hear about the seminar?<span class="required">*</span></p>
+            <div class="answer row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rOne" name="how-hear" required />
+                    <label for="rOne" class="radio">Website</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rTwo" name="how-hear" required />
+                    <label for="rTwo" class="radio">Radio</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rThree" name="how-hear" required />
+                    <label for="rThree" class="radio">Newsletter</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rFour" name="how-hear" required />
+                    <label for="rFour" class="radio">Flyer</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="rFive" name="how-hear" required />
+                    <label for="rFive" class="radio">Other</label>
+                </div>
+            </div>
+        </div>
+        <div class="question-block">
+            <p class="question">What is your overall assessment of the seminar?</p>
+            <div class="answer row">
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioOne" name="assessment" />
+                    <label for="radioOne" class="radio">Critical</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioTwo" name="assessment" />
+                    <label for="radioTwo" class="radio">Unsatisfied</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioThree" name="assessment" />
+                    <label for="radioThree" class="radio">Neutral</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioFour" name="assessment" />
+                    <label for="radioFour" class="radio">Satisfied</label>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <input type="radio" value="none" id="radioFive" name="assessment" />
+                    <label for="radioFive" class="radio">Very Satisfied</label>
+                </div>
+            </div>
+        </div>
+        <div class="statements-block">
+            <p>How much do you agree with the following statements regarding the seminar?<span class="required">*</span>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="first-col"></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Neutral</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first-col">The information presented was useful</td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                        <td><input type="radio" value="None" name="useful" required /></td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">The speaker was engaging and knowledgeable</td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                        <td><input type="radio" value="None" name="speaker" required /></td>
+                    </tr>
+                    <tr>
+                        <td class="first-col">The length of this seminar was satisfactory</td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                        <td><input type="radio" value="None" name="length" required /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="question-block row">
+            <div class="col-xl-4">
+                <p class="question">Do you have further comments or suggestions?<span class="required">*</span><small>And
+                thank you again for filling out the seminar evaluation form</small></p>
+            </div>
+            <div class="col-xl-8">
+                <div class="answer">
+                    <textarea rows="5" required></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="btn-block">
+            <button type="submit" href="/">Send</button>
+        </div>
+    </form>
+</div>
