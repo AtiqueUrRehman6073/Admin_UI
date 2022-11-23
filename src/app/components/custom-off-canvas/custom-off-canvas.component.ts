@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -18,30 +19,34 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class CustomOffCanvasComponent implements OnInit {
 
-  constructor(private toastr:ToastrService) { }
+  constructor(private toastr: ToastrService, private router: Router) { }
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$'),Validators.minLength(8)]);
+  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$'), Validators.minLength(8)]);
 
   matcherEmail = new MyErrorStateMatcher();
   matcherPass = new MyErrorStateMatcher();
 
-  @Input() width:number = 0;
-  
+  @Input() width: number = 0;
+
   ngOnInit(): void {
     $("#offCanvasContainer").hide();
   }
-  showOffCanvas(){
+  showOffCanvas() {
     $("#offCanvasContainer").show();
   }
-  closeOffCanvas(){
+  closeOffCanvas() {
     $("#offCanvasContainer").hide();
   }
-  toWorkerDetails(){
+  toWorkerDetails() {
     $('#imgLock').addClass('shaker');
-    setTimeout(()=>{
+    setTimeout(() => {
       $('#imgLock').removeClass('shaker');
-    },500);
-    this.toastr.error('Invalid Credentials','Error');
+    }, 500);
+    this.toastr.error('Invalid Credentials', 'Error');
+  }
+  toAccounts() {
+    if (!this.passwordFormControl.hasError('required') && !this.emailFormControl.hasError('required'))
+      this.router.navigateByUrl('admin/accounts');
   }
 
 }

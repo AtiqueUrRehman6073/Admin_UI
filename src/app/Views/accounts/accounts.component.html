@@ -1,0 +1,154 @@
+<section *ngIf="loader">
+    <h1 class="text-shadow"> -- Mangla Foods -- </h1>
+    <div class="tags">
+        <p class="text-shadow"><small>#Accounts #Authorized-person-only</small></p>
+    </div>
+    <div class="bottleContainer">
+        <div class="bottle">
+            <div class="bottle__sides">
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+                <div class="bottle__side"><span>D</span><span>r</span><span>i</span><span>n</span><span>k</span><span>
+                    </span><span>m</span><span>o</span><span>r</span><span>e</span><span>
+                    </span><span>w</span><span>a</span><span>t</span><span>e</span><span>r</span><span>!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bodyContainer">
+        <div class="platform">
+            <div class="plate"></div>
+            <div class="plate"></div>
+            <div class="panels">
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+                <div class="panel"></div>
+            </div>
+        </div>
+    </div>
+    <div class="progressBarContainer">
+        <div class="progress">
+            <div id="progress-bar" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                style="width:0%">
+                {{pwidth}}%
+            </div>
+        </div>
+    </div>
+</section>
+<section *ngIf="loader === false">
+    <!-- <button class="ai">Click Me</button> -->
+    <div id="leftmenu">
+  
+            <div id="date_time">
+              <div id="date" class="semi_arc e4">
+                <div class="semi_arc_2 e4_1">
+                  <div class="counterspin4"></div>
+                </div>
+                  <div style="font-size: 40px; margin-top: 25px;">04</div>
+                  <div style="font-size: 25px;">January</div>
+              </div>
+              
+              <div id="time" class="arc e1">
+                  <div style="font-size: 23px; margin-left: -10px; margin-top: 23px;">23:41</div>
+                  <div style="font-size: 15px; margin-left: 40px; margin-top: -30px; display; inline;">31</div>
+                  <div style="font-size: 17px; margin-top: 10px;">Tuesday</div>
+              </div>
+            </div>
+            
+            <p class="title">Performance</p>
+            <div class="hline title_underline"></div>
+            
+            <span class="menuitem entypo-gauge" style="font-size: 30px; margin-left: 10px;">
+              <p id="cpu" class="caption" style="font-size: 20px;">CPU Usage: 19%</p>
+            </span> <br/>
+            
+            <span class="menuitem entypo-chart-area" style="font-size: 30px; margin-left: 10px;">
+              <p id="ram" class="caption" style="font-size: 20px;">Physical Memory: 28%</p>
+            </span> <br/>
+            
+            <span class="menuitem entypo-chart-pie" style="font-size: 30px; margin-left: 10px;">
+              <p id="proc" class="caption" style="font-size: 20px;">Processes: 73</p>
+            </span>
+            
+            <p class="title">Shortcuts</p>
+            <div class="hline title_underline"></div> 
+            
+            <div class="menu">
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">User</p> </button>
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Documents</p> </button>
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Computer</p> </button>
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Control Panel</p> </button>
+              
+              <hr style="border-color: transparent; margin: 0;"/>
+              <div class="hline" style="margin-top: 5px; margin-bottom: 5px;"></div>
+              
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Custom Path 1</p> </button>
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Custom Path 2</p> </button>
+              <button class="menuitem"> <span class="entypo-right-open"/> <p class="caption">Custom Path 3</p> </button>
+            </div>
+            
+            <p class="title">Social</p>
+            <div class="hline title_underline"></div>
+            
+            <div class="app_icon entypo-facebook-squared"></div>
+            <div class="app_icon entypo-twitter"></div>
+            <div class="app_icon entypo-gplus"></div>
+            <div class="app_icon entypo-skype"></div>
+            
+            <div class="app_icon entypo-tumblr"></div>
+            <div class="app_icon entypo-pinterest"></div>
+            <div class="app_icon entypo-soundcloud"></div>
+            <div class="app_icon entypo-stumbleupon"></div>
+            
+          </div>
+          
+          
+          <!-- Right Menu -->
+          <div id="rightmenu">
+            <p class="title" style="text-align: left; margin-left: 10px;">Notes</p>
+            <div id="particle10" class="hline"></div>
+            <div id="particle11" class="hline"></div>
+            <div id="particle12" class="vline"></div>
+            <textarea id="note_input" rows="12" cols="44">For the maximum viewing experience, please view this pen in full screen where the code is displayed to the side of the display.
+              
+              To Complete:
+              - Right Menu (this side of the screen)
+                - Make this note restricted to 11 rows
+                - Fill in empty space below
+              - Weather widget next to date/time
+              - Place quick access taskbar down bottom
+              - Fill in space at the top</textarea>
+          </div>
+          
+</section>

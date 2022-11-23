@@ -28,6 +28,7 @@ import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { AddNewOrderFormComponent } from './components/add-new-order-form/add-new-order-form.component';
 import { EmployeesListingComponent } from './components/employees-listing/employees-listing.component';
 import { AddNewMemberFormComponent } from './components/add-new-member-form/add-new-member-form.component';
+import { AccountsComponent } from './Views/accounts/accounts.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 registerAllModules();
@@ -48,6 +49,7 @@ registerAllModules();
     AddNewOrderFormComponent,
     EmployeesListingComponent,
     AddNewMemberFormComponent,
+    AccountsComponent,
   ],
   imports: [
     BrowserModule,

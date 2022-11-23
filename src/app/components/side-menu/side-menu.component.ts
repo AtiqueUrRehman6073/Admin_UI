@@ -40,6 +40,9 @@ export class SideMenuComponent implements OnInit {
       this.skew = 0;
     }, 3000);
   }
+  showCustomOffCanvas(){
+    $("#offCanvasContainer").show();
+  }
   //////// Navigation Functions /////////
   toDashboard() {
     this.router.navigateByUrl('dashboard');

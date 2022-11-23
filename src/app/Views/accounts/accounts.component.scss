@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+$speed: 20s;
+.bodyContainer{
+  font-family: 'Courgette', cursive;
+  background-color: rgba(0, 0, 0, 0.877);
+  background-image: radial-gradient(circle, rgba(0, 17, 34, 0.884), rgba(0, 0, 0, 0.938) 15em);
+  color: #fff;
+  padding-top: 10%;
+  bottom: 0%;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 75em;
+  perspective-origin: 50% calc(50% - 5em);
+  transform-style: preserve-3d; 
+}
+.platform {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: platform $speed*0.4 infinite ease-in-out;
+  @keyframes platform {
+    0%, 100% { transform: translateY(-0.5em);}
+    50% { transform: translateY(0.5em);}
+  }
+}
+
+.plate {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+
+  &:nth-child(1) {
+    width: 16em; height: 16em;
+    background-image: radial-gradient(#444, #111);
+    transform: translate(-50%, -50%) rotateX(90deg) translateZ(2em);
+  }
+  &:nth-child(2) {
+    width: 14em; height: 14em;
+    background-image: radial-gradient(#000, #222);
+    transform: translate(-50%, -50%) rotateX(90deg) translateZ(-2em);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 0.5em;
+    background-image: linear-gradient(90deg, #222, #333, #111, #222);
+    transform: translateX(-50%) rotateX(-90deg) translateZ(0.5em);
+    transform-origin: top;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    background-image: linear-gradient(90deg, #222, #333, #111, #222);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) translateZ(-0.5em);
+  }
+}
+
+.panel {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 3em; height: 3em;
+  clip-path: polygon(0 0, 100% 0, 93.25% 100%, 6.75% 100%);
+  background-color: #0005;
+  overflow: hidden;
+  animation: panalRotate $speed*3 infinite linear;
+
+  @keyframes panalRotate {
+
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.1; }
+
+    from { transform: translate(-50%, calc(-50% + 0.25em)) rotateY(0) translateZ(7em) rotateX(-15deg); }
+    to { transform: translate(-50%, calc(-50% + 0.25em)) rotateY(360deg) translateZ(7em) rotateX(-15deg); }
+  }
+
+  $count: 16;
+  @for $i from 0 to $count {
+    &:nth-child(#{$i + 1}) {
+      animation-delay: #{$speed / $count * $i * -3};
+
+      &::after {
+        animation-delay: #{$speed / $count * $i * -1};
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%; left: 50%;
+    content: "I'm a slow walker but I never walk backwards";
+    font-weight: 700;
+    font-size: 2em;
+    white-space: nowrap;
+    color: #0009;
+    text-shadow:
+      0 0 5px #0af,
+      0 0 15px #0af,
+      0 0 30px #0af;
+    animation: textMove $speed infinite linear;
+  }
+
+  @keyframes textMove {
+    from { transform: translate(2rem, -50%); }
+    to { transform: translate(-42.64rem, -50%); }
+  }
+}
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&display=swap");
+
+$blue: #2962ff;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Alumni Sans", sans-serif;
+	font-size: 16px;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-size: 2em;
+	background: #212121;
+	color: #fff;
+	text-transform: uppercase;
+	gap: 30px;
+}
+
+h1 {
+	font-size: 2.5em;
+	text-decoration: underline;
+	@media (max-width: 768px) {
+		font-size: 1.3em;
+	}
+}
+
+.text-shadow {
+	font-style: italic;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke: #fff;
+	-webkit-text-stroke-width: 1px;
+	text-shadow: 2px 2px 10px $blue;
+	transition: all 0.5s ease-in-out;
+	text-align: center;
+	letter-spacing: 0.2em;
+	animation: flicker 0.5s ease-in-out infinite alternate;
+
+	&:hover {
+		color: #fff;
+	}
+}
+
+.tags small {
+	@media (max-width: 768px) {
+		font-size: 0.5em;
+	}
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.5;
+		text-shadow: 2px 2px 10px $blue;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 2px 2px 20px $blue;
+	}
+}
+
+
+
+
+
+$sides: 10;
+$transforms:
+	// z-pos (ch), angle (deg), y-scale
+	(2      0 1) 
+	(2      0 1) 
+	(2.25 -30 1) 
+	(2.75 -30 1.3) 
+	(3.25 -30 1.5) 
+	(3.5    0 1.75) 
+	(3.5    0 1.75) 
+	(3.5    0 1.75) 
+	(3.3   15 1.5) 
+	(3     15 1.4) 
+	(2.8    0 1.3) 
+	(2.8    0 1.3) 
+	(3    -15 1.4) 
+	(3.3  -15 1.5) 
+	(3.5    0 1.75) 
+	(3.5    0 1.75) 
+	(3.25  15 1.5);
+
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(24px + (36 - 24)*(100vw - 320px)/(1280 - 320));
+}
+.bottleContainer {
+	color: #ffffff;
+	display: flex;
+	font: bold 1em/1.5 "DM Mono", monospace;
+  height: 10vh;
+  right: 0;
+  top: 80px;
+  text-transform: uppercase;
+  position: absolute;
+}
+.bottle {
+	margin: auto;
+	perspective: 25em;
+	position: relative;
+	width: 11em;
+	height: 11em;
+	&__sides, &__side {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform-style: preserve-3d;
+	}
+	&__sides {
+		animation: spin 1s linear infinite;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transform: rotateZ(90deg) rotateX(-90deg);
+	}
+	&__side {
+		display: flex;
+		$visibleSides: ceil($sides/2) + 1;
+		@for $s from 1 through $sides {
+			&:nth-child(#{$s}) {
+				$rotateX: 360deg/$sides * ($s - 1);
+				transform: translateY(-50%) rotateX($rotateX);
+			}
+		}
+		span {
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+			display: inline-block;
+			width: 1ch;
+			@for $c from 1 through length($transforms) {
+				&:nth-child(#{$c}) {
+					transform:
+						translateZ(0ch + nth(nth($transforms,$c),1)) 
+						rotateY(0deg + nth(nth($transforms,$c),2)) 
+						scaleY(nth(nth($transforms,$c),3));
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotateZ(90deg) rotateX(-90deg);
+	}
+	to {
+		transform: rotateZ(90deg) rotateX(-90deg + 360deg/$sides);
+	}
+}
+
+
+.progressBarContainer{
+  margin-top: 200px;
+  width: 30%;
+}
+.progress-bar{
+  background: #5179a7;
+}
+
+
+.ai{
+  padding: 10px;
+  transform: skew(-20deg);
+  color: #02feff;
+  border: 1px solid #02feff;
+  background: transparent;
+  text-shadow: 10px 20px 30px #02feff;
+}
+
+
+
+
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  transition: 0.3s;
+}
+
+* {
+  user-select: none;
+  font: 20px 'Agency FB', sans-serif;
+}
+
+/* Left Menu */
+#leftmenu {
+  position: fixed;
+  float: left;
+  margin-left: 50px;
+  width: 210px;
+}
+
+#date_time {
+  margin-left: 30px;
+  width: 200px;
+  height: 200px;
+}
+
+#time {
+  margin-left: 110px;
+  position: fixed;
+  background: rgba(0,0,0,0.8);
+  line-height: 0;
+}
+
+#date {
+  position: fixed;
+  margin-top: 20px;
+  background: rgba(0,0,0,0.8);
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+  margin-left: -15px;
+}
+
+.title_underline {
+  border-color: rgba(2, 255, 255, 0.6);
+}
+
+.menu {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 5px;
+}
+
+.menuitem {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  margin-left: 5px;
+  color: #02feff;
+  background: transparent;
+  border: transparent;
+  font-size: 15px;
+  text-align: left;
+  display: block;
+  float: left;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.caption {
+  color: rgba(2, 255, 255, 0.6);
+  display: inline;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.caption:hover { color: #02feff; }
+
+.app_icon {
+  width: 48px;
+  color: rgba(2, 255, 255, 0.6);
+  font-size: 40px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+.app_icon:hover { color: #02feff; }
+
+
+
+/* Right Menu */
+#rightmenu {
+  float: right;
+  margin-right: 20px;
+  width: 300px;
+}
+
+#note_input {
+  color: rgba(2, 255, 255, 0.6);
+  padding: 5px;
+  border-style: none;
+  background: transparent;
+  resize: none;
+  transition: 0.3s;
+  width: calc(100% - 15px);
+}
+#note_input:hover {
+  color: #02feff;
+  transition: 0.3s;
+}
+
+
+
+/* Taskbar */
+#taskbar_wrapper
+
+#taskbar {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* Arc Reactor */
+ul {
+  list-style:none;
+  margin:0;
+  padding:0
+}
+
+#arc_container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.arc_reactor {
+  position: relative;
+  top: 50%;
+  margin-top: -125px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 50px 15px rgb(2 255 255 / 30%), inset 0px 0px 50px 15px rgb(2 255 255 / 30%);
+}
+
+.case_container {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.core2 {
+  background: #cedce0;
+  width: 110px;
+  height: 110px;
+  @include border-radius(50%);
+  border: 5px solid rgba(2, 255, 255, 0.15);
+  animation: flicker2 0.2s infinite;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.e7 {
+  width: 95.25%;
+  height: 95.25%;
+  left: 2.5475%;
+  right: 2.5475%;
+  border: $size3 solid transparent;
+  background: transparent;
+  @include border-radius(50%);
+  transform: rotateZ(0deg);
+  transition: box-shadow 3s ease;
+  text-align: center;
+  line-height: 100px;
+}
+
+.marks li {
+  display:block;
+  width: 3px;
+  height: 11px;
+  background: rgba(2, 254, 255, 0.8);
+  position: absolute;
+  margin-left: 105px;
+  margin-top: -110px;
+  animation: colour_ease2 3s infinite ease-in-out;
+}
+
+@keyframes colour_ease2 {
+  0% { background: rgba(2,254,255,1); }
+  50% { background: rgba(2,254,255,0.3); }
+  100% { background: rgba(2,254,255,1); }
+}
+
+$arc_radius: 125px;
+.marks li:first-child {transform:rotate(6deg) translateY($arc_radius)}
+.marks li:nth-child(2) {transform:rotate(12deg) translateY($arc_radius)}
+.marks li:nth-child(3) {transform:rotate(18deg) translateY($arc_radius)}
+.marks li:nth-child(4) {transform:rotate(24deg) translateY($arc_radius)}
+.marks li:nth-child(5) {transform:rotate(30deg) translateY($arc_radius)}
+.marks li:nth-child(6) {transform:rotate(36deg) translateY($arc_radius)}
+.marks li:nth-child(7) {transform:rotate(42deg) translateY($arc_radius)}
+.marks li:nth-child(8) {transform:rotate(48deg) translateY($arc_radius)}
+.marks li:nth-child(9) {transform:rotate(54deg) translateY($arc_radius)}
+.marks li:nth-child(10) {transform:rotate(60deg) translateY($arc_radius)}
+.marks li:nth-child(11) {transform:rotate(66deg) translateY($arc_radius)}
+.marks li:nth-child(12) {transform:rotate(72deg) translateY($arc_radius)}
+.marks li:nth-child(13) {transform:rotate(78deg) translateY($arc_radius)}
+.marks li:nth-child(14) {transform:rotate(84deg) translateY($arc_radius)}
+.marks li:nth-child(15) {transform:rotate(90deg) translateY($arc_radius)}
+.marks li:nth-child(16) {transform:rotate(96deg) translateY($arc_radius)}
+.marks li:nth-child(17) {transform:rotate(102deg) translateY($arc_radius)}
+.marks li:nth-child(18) {transform:rotate(108deg) translateY($arc_radius)}
+.marks li:nth-child(19) {transform:rotate(114deg) translateY($arc_radius)}
+.marks li:nth-child(20) {transform:rotate(120deg) translateY($arc_radius)}
+.marks li:nth-child(21) {transform:rotate(126deg) translateY($arc_radius)}
+.marks li:nth-child(22) {transform:rotate(132deg) translateY($arc_radius)}
+.marks li:nth-child(23) {transform:rotate(138deg) translateY($arc_radius)}
+.marks li:nth-child(24) {transform:rotate(144deg) translateY($arc_radius)}
+.marks li:nth-child(25) {transform:rotate(150deg) translateY($arc_radius)}
+.marks li:nth-child(26) {transform:rotate(156deg) translateY($arc_radius)}
+.marks li:nth-child(27) {transform:rotate(162deg) translateY($arc_radius)}
+.marks li:nth-child(28) {transform:rotate(168deg) translateY($arc_radius)}
+.marks li:nth-child(29) {transform:rotate(174deg) translateY($arc_radius)}
+.marks li:nth-child(30) {transform:rotate(180deg) translateY($arc_radius)}
+.marks li:nth-child(31) {transform:rotate(186deg) translateY($arc_radius)}
+.marks li:nth-child(32) {transform:rotate(192deg) translateY($arc_radius)}
+.marks li:nth-child(33) {transform:rotate(198deg) translateY($arc_radius)}
+.marks li:nth-child(34) {transform:rotate(204deg) translateY($arc_radius)}
+.marks li:nth-child(35) {transform:rotate(210deg) translateY($arc_radius)}
+.marks li:nth-child(36) {transform:rotate(216deg) translateY($arc_radius)}
+.marks li:nth-child(37) {transform:rotate(222deg) translateY($arc_radius)}
+.marks li:nth-child(38) {transform:rotate(228deg) translateY($arc_radius)}
+.marks li:nth-child(39) {transform:rotate(234deg) translateY($arc_radius)}
+.marks li:nth-child(40) {transform:rotate(240deg) translateY($arc_radius)}
+.marks li:nth-child(41) {transform:rotate(246deg) translateY($arc_radius)}
+.marks li:nth-child(42) {transform:rotate(252deg) translateY($arc_radius)}
+.marks li:nth-child(43) {transform:rotate(258deg) translateY($arc_radius)}
+.marks li:nth-child(44) {transform:rotate(264deg) translateY($arc_radius)}
+.marks li:nth-child(45) {transform:rotate(270deg) translateY($arc_radius)}
+.marks li:nth-child(46) {transform:rotate(276deg) translateY($arc_radius)}
+.marks li:nth-child(47) {transform:rotate(282deg) translateY($arc_radius)}
+.marks li:nth-child(48) {transform:rotate(288deg) translateY($arc_radius)}
+.marks li:nth-child(49) {transform:rotate(294deg) translateY($arc_radius)}
+.marks li:nth-child(50) {transform:rotate(300deg) translateY($arc_radius)}
+.marks li:nth-child(51) {transform:rotate(306deg) translateY($arc_radius)}
+.marks li:nth-child(52) {transform:rotate(312deg) translateY($arc_radius)}
+.marks li:nth-child(53) {transform:rotate(318deg) translateY($arc_radius)}
+.marks li:nth-child(54) {transform:rotate(324deg) translateY($arc_radius)}
+.marks li:nth-child(55) {transform:rotate(330deg) translateY($arc_radius)}
+.marks li:nth-child(56) {transform:rotate(336deg) translateY($arc_radius)}
+.marks li:nth-child(57) {transform:rotate(342deg) translateY($arc_radius)}
+.marks li:nth-child(58) {transform:rotate(348deg) translateY($arc_radius)}
+.marks li:nth-child(59) {transform:rotate(354deg) translateY($arc_radius)}
+.marks li:nth-child(60) {transform:rotate(360deg) translateY($arc_radius)}
+
+/* Particles / Unique Elements */
+.vline {
+  width: 0;
+  height: 200px;
+  float: left;
+  border-left: 1px solid rgb(2 255 255 / 30%);
+}
+
+.hline {
+  width: 200px;
+  height: 0;
+  border-bottom: 1px solid rgb(2 255 255 / 30%);
+}
+
+#particle1 {
+  position: fixed;
+  margin-left: 260px;
+  margin-top: 410px;
+}
+
+#particle1_1 {
+  position: fixed;
+  margin-left: 255px;
+  margin-top: 480px;
+}
+
+#particle1_2 {
+  position: fixed;
+  margin-left: 275px;
+  margin-top: 580px;
+}
+
+#particle1_3 {
+  position: fixed;
+  color: rgb(2 255 255 / 30%);
+  font-size: 90px;
+  margin-left: 190px;
+  margin-top: 730px;
+  transform: rotate(90deg);
+  z-index: -1;
+}
+
+#particle2 {
+  position: fixed;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#particle3 {
+  position: fixed;
+  height: 240px;
+  margin-left: 40px;
+}
+
+#particle4 {
+  position: fixed;
+  height: 240px;
+  margin-top: 200px;
+  margin-left: -10px;
+}
+
+#particle5 {
+  position: fixed;
+  height: 290px;
+  margin-top: -90px;
+  margin-left: 230px;
+  border-color: rgba(2, 255, 255, 0.15);
+}
+
+#particle6 {
+  position: fixed;
+  height: 290px;
+  margin-top: 5px;
+  margin-left: 3px;
+  border-color: $colour2;
+}
+
+#particle7 {
+  position: fixed;
+  height: 290px;
+  margin-top: 5px;
+  margin-left: 3px;
+  border-color: rgba(2, 255, 255, 0.15);
+}
+
+#particle8 {
+  position: fixed;
+  height: 500px;
+  margin-left: -232px;
+  margin-top: 280px;
+  border-color: rgba(2, 255, 255, 0.15);
+}
+
+#particle9 {
+  position: fixed;
+  height: 320px;
+  margin-left: 3px;
+  border-color: $colour2;
+}
+
+/* Right Menu Particles */
+#particle10 {
+  width: 330px;
+  float: right;
+  border-color: rgba(2, 255, 255, 0.6);
+}
+
+#particle11 {
+  margin-right: 30px;
+  margin-top: 3px;
+  width: 330px;
+  float: right;
+  border-color: rgba(2, 255, 255, 0.6);
+}
+
+#particle12 {
+  float: left;
+  height: 352px;
+  margin-top: -40px;
+  border-color: rgba(2, 255, 255, 0.6);
+}
