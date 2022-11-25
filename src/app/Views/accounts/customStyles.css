@@ -449,29 +449,32 @@
         linear-gradient(to bottom, rgb(2, 254, 255, 0.116) 0.5px, transparent 1px);
 }
 
-i{
-cursor: pointer;
+i {
+    cursor: pointer;
 }
-.topBar{
+
+.topBar {
     position: absolute;
-    background: rgba(2,254,255,0.25);
-    border:0.5px solid rgba(2,254,255,0.5);
+    background: rgba(2, 254, 255, 0.25);
+    border: 0.5px solid rgba(2, 254, 255, 0.5);
     width: 33%;
     height: 30px;
     transform: skew(45deg);
     margin-left: 33%;
 }
-.topBar2{
+
+.topBar2 {
     position: absolute;
-    background: rgba(2,254,255,0.25);
-    border:0.5px solid rgba(2,254,255,0.5);
+    background: rgba(2, 254, 255, 0.25);
+    border: 0.5px solid rgba(2, 254, 255, 0.5);
     width: 33%;
     height: 30px;
     transform: skew(-45deg);
     margin-left: 33%;
 }
-.filesModal{
-    background-image: linear-gradient(to bottom right, #02c4ff7e , #02afff23);
+
+.filesModal {
+    background-image: linear-gradient(to bottom right, #02c4ff7e, #02afff23);
     border: 0.5px solid #02c4ffd0;
     padding: 0px 0px 0px 0px !important;
     top: 25%;
@@ -482,7 +485,8 @@ cursor: pointer;
     z-index: 10000;
     transition: 0.5s;
 }
-.topBarFiles{
+
+.topBarFiles {
     height: 30px;
     width: 100%;
     margin-top: 0px;
@@ -490,10 +494,24 @@ cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center !important;
-    padding:10px !important;
+    padding: 10px !important;
     cursor: move;
 }
-.filesBody{
 
+.filesBody {}
+
+.filesListing {
+    font-size: 8pt;
+    width: 100%;
+    padding: 8px 15px 8px 15px !important;
+    background: #02eeff28;
+    border-top: 0.5px solid #0af;
+    border-bottom: 0.5px solid rgba(0, 238, 255, 0.74);
+    transition: 0.5s;
 }
 
+.filesListing:hover {
+    background: #02fff254;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 #02fff238, 0 6px 20px 0 #02fff238;
+}

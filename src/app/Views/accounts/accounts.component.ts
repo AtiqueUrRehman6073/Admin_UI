@@ -10,7 +10,7 @@ export class AccountsComponent implements OnInit {
   constructor() { }
 
   loader: boolean = false;
-  loader2: boolean = false;
+  loader2: boolean = true;
   maximizer:boolean = false;
   pwidth: number = 0;
   iterator: number = 0;
@@ -101,14 +101,31 @@ export class AccountsComponent implements OnInit {
       $("#"+id).css('height','50vh');
       $("#"+id).css('top','25%');
       $("#"+id).css('left','30%');
+      $("#leftmenu").css('opacity','1');
+      $("#rightmenu").css('opacity','1');
+      $("#date_time").css('opacity','1');
+      $("#date").css('opacity','1');
+      $("#time").css('opacity','1');
+      $("#particle2").css('opacity','1');
+      $("#ccp1").css('opacity','1');
+      $("#ccp2").css('opacity','1');
     }
     else{
       $("#"+id).css('width','100%');
       $("#"+id).css('height','100vh');
       $("#"+id).css('top','0%');
       $("#"+id).css('left','0%');
+      $("#leftmenu").css('opacity','0.02');
+      $("#rightmenu").css('opacity','0.02');
+      $("#date_time").css('opacity','0.02');
+      $("#date").css('opacity','0.02');
+      $("#particle2").css('opacity','0.02');
+      $("#ccp1").css('opacity','0.02');
+      $("#ccp2").css('opacity','0.02');
     }
     this.maximizer = !this.maximizer;
   }
-
+  closeWindow(id:any){
+    $("#"+id).hide(150);
+  }
 }
