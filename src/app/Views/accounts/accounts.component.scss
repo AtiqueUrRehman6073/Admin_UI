@@ -140,10 +140,15 @@ section {
 .jarvisSection{
   min-height: 100vh;
 	font-size: 2em;
-	background: transparent;
 	color: #fff;
   text-transform: uppercase;
   color: #02feff;
+}
+.jarvisSection *{
+  user-select: none;
+  font-size: 20px;
+  padding: 5px 0px 0px 0px;
+  overflow: -moz-hidden-unscrollable;
 }
 
 h1 {
@@ -316,20 +321,15 @@ $transforms:
   transition: 0.3s !important;
 }
 
-.jarvisSection *{
-  user-select: none;
-  font-family:'Agency FB', sans-serif !important;
-  font-size: 20px;
-  padding: 5px 0px 0px 0px !important;
-  overflow: -moz-hidden-unscrollable;
-}
-
 /* Left Menu */
 #leftmenu {
   position: fixed;
   float: left;
   margin-left: 50px;
   width: 210px;
+}
+#leftmenu *{
+  font-family:'Agency FB', sans-serif !important;
 }
 
 #date_time {
@@ -393,6 +393,7 @@ $transforms:
 /* Right Menu */
 #rightmenu {
   float: right;
+  font-family:'Agency FB', sans-serif;
   margin-right: 20px;
   width: 350px;
   height: fit-content;
@@ -685,6 +686,7 @@ $arc_radius: 125px;
 }
 
 #particle1_3 {
+  font-family:'Agency FB', sans-serif;
   position: fixed;
   color: rgb(2 255 255 / 30%);
   font-size: 90px;

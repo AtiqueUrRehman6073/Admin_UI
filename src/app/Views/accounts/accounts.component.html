@@ -66,7 +66,7 @@
         </div>
     </div>
 </section>
-<section class="loader2"  *ngIf="loader2">
+<section class="loader2" *ngIf="loader2">
     <div class="shapeContainer">
         <div class="shape"></div>
         <div class="shape2"></div>
@@ -137,11 +137,11 @@
         <div class="shape6"></div>
         <div class="shape7"></div>
         <div class="stats" id="statText">
-            
+
         </div>
     </div>
 </section>
-<div class="jarvisSection" *ngIf="loader2 === false">
+<div class="jarvisSection bgGrid" *ngIf="loader2 === false">
     <!-- <button class="ai">Click Me</button> -->
     <div id="leftmenu">
         <div id="date_time">
@@ -179,38 +179,38 @@
         <div class="hline title_underline"></div>
 
         <div class="menu">
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">User</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">User</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Documents</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Documents</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Computer</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Computer</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Control Panel</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Control Panel</p>
                 </span>
             </button>
             <!-- <hr style="border-color: transparent; margin: 0;" /> -->
             <!-- <div class="hline" style="margin-top: 5px; margin-bottom: 5px;"></div> -->
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Custom Path 1</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Custom Path 1</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Custom Path 2</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Custom Path 2</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open" style="padding-left: 5px;">
-                    <p class="caption">Custom Path 3</p>
+            <button class="menuitem"> <span class="entypo-right-open">
+                    <p class="caption" style="margin-left: 5px;">Custom Path 3</p>
                 </span>
             </button>
         </div>
-        <p class="title">Social</p>
+        <p class="title" style="padding-top: 90px !important;">Social</p>
         <div class="hline title_underline"></div>
 
         <div class="app_icon entypo-facebook-squared"></div>
@@ -239,6 +239,11 @@
               - Weather widget next to date/time
               - Place quick access taskbar down bottom
               - Fill in space at the top</textarea>
+    </div>
+    <!-- Top Bar -->
+    <div class="topBar"></div>
+    <div class="topBar2">
+        <h5 style="color: #fff;text-align: center;font-weight: 800;transform: skew(43deg);">2022</h5>
     </div>
     <!-- Arc Reactor -->
     <div id="arc_container">
@@ -343,6 +348,21 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="filesModal" id="filesModalId">
+        <div class="topBarFiles" id="filesModalIdheader">
+            <h5 style="font-family:'Courier New', Courier, monospace !important;">Account Details</h5>
+            <div>
+                <i class="material-icons">minimize</i>
+                <i class="material-icons" (click)="maximize('filesModalId')">crop_square</i>
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <div class="filesBody">
+            <ul>
+                <li></li>
+            </ul>
         </div>
     </div>
 </div>

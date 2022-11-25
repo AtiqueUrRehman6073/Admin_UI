@@ -11,6 +11,7 @@ export class AccountsComponent implements OnInit {
 
   loader: boolean = false;
   loader2: boolean = false;
+  maximizer:boolean = false;
   pwidth: number = 0;
   iterator: number = 0;
   iterator2: number = 1;
@@ -92,6 +93,22 @@ export class AccountsComponent implements OnInit {
       this.loader2 = false;
     },15000);
 
+  }
+
+  maximize(id:any){
+    if (this.maximizer){
+      $("#"+id).css('width','40%');
+      $("#"+id).css('height','50vh');
+      $("#"+id).css('top','25%');
+      $("#"+id).css('left','30%');
+    }
+    else{
+      $("#"+id).css('width','100%');
+      $("#"+id).css('height','100vh');
+      $("#"+id).css('top','0%');
+      $("#"+id).css('left','0%');
+    }
+    this.maximizer = !this.maximizer;
   }
 
 }

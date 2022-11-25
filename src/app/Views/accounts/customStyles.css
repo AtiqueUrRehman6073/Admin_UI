@@ -327,6 +327,7 @@
     width: 19.5%;
     border: 1px solid white;
 }
+
 .shape5 {
     position: absolute;
     left: 0;
@@ -339,7 +340,8 @@
     -webkit-transform: skew(-45deg);
     transform: skew(-45deg);
 }
-.shape6{
+
+.shape6 {
     position: absolute;
     z-index: 1000;
     left: 550px;
@@ -348,7 +350,8 @@
     border-bottom: 2px solid white;
     border-right: 2px solid white;
 }
-.shape7{
+
+.shape7 {
     position: absolute;
     z-index: 1000;
     right: 0px;
@@ -361,24 +364,26 @@
     -webkit-transform: skew(45deg);
     transform: skew(45deg);
 }
-.stats{
+
+.stats {
     text-transform: initial !important;
     font-size: 10pt;
     font-family: 'Courier New', Courier, monospace !important;
     width: 22%;
     height: 145px;
-    margin:10px;
+    margin: 10px;
     overflow-y: scroll !important;
     text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff,
-    0 0 30px rgba(10, 144, 253, 0.384),
-    0 0 40px rgba(10, 144, 253, 0.3),
-    0 0 50px rgba(10, 144, 253, 0.250),
-    0 0 60px rgba(10, 144, 253, 0.185),
-    0 0 70px rgba(10, 144, 253, 0.100); 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px rgba(10, 144, 253, 0.384),
+        0 0 40px rgba(10, 144, 253, 0.3),
+        0 0 50px rgba(10, 144, 253, 0.250),
+        0 0 60px rgba(10, 144, 253, 0.185),
+        0 0 70px rgba(10, 144, 253, 0.100);
 }
+
 .neonText {
     position: absolute;
     top: 25px;
@@ -395,12 +400,14 @@
         0 0 102px #0af,
         0 0 151px #0af;
 }
-.loadingBox{
+
+.loadingBox {
     position: absolute;
     top: 90px;
     left: 600px;
 }
-.glider{
+
+.glider {
     width: 100px;
     height: 0;
     position: relative;
@@ -414,8 +421,9 @@
     transform: rotate(45deg);
     box-shadow: -6px 0px 4px black;
 }
+
 .col-1 {
-    margin:5px 2px 2px 2px;
+    margin: 5px 2px 2px 2px;
     width: 20px;
     height: 45px;
     background-color: #fff;
@@ -429,6 +437,63 @@
         0 0 60px rgba(10, 144, 253, 0.185),
         0 0 70px rgba(10, 144, 253, 0.100);
 }
-.tallerBox{
+
+.tallerBox {
     height: 90px;
 }
+
+.bgGrid {
+    background-size: 10px 10px;
+    background-image:
+        linear-gradient(to right, rgba(2, 255, 255, 0.116) 0.5px, transparent 1px),
+        linear-gradient(to bottom, rgb(2, 254, 255, 0.116) 0.5px, transparent 1px);
+}
+
+i{
+cursor: pointer;
+}
+.topBar{
+    position: absolute;
+    background: rgba(2,254,255,0.25);
+    border:0.5px solid rgba(2,254,255,0.5);
+    width: 33%;
+    height: 30px;
+    transform: skew(45deg);
+    margin-left: 33%;
+}
+.topBar2{
+    position: absolute;
+    background: rgba(2,254,255,0.25);
+    border:0.5px solid rgba(2,254,255,0.5);
+    width: 33%;
+    height: 30px;
+    transform: skew(-45deg);
+    margin-left: 33%;
+}
+.filesModal{
+    background-image: linear-gradient(to bottom right, #02c4ff7e , #02afff23);
+    border: 0.5px solid #02c4ffd0;
+    padding: 0px 0px 0px 0px !important;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height: 50vh;
+    position: absolute;
+    z-index: 10000;
+    transition: 0.5s;
+}
+.topBarFiles{
+    height: 30px;
+    width: 100%;
+    margin-top: 0px;
+    background: #00b7ff85;
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+    padding:10px !important;
+    cursor: move;
+}
+.filesBody{
+
+}
+
