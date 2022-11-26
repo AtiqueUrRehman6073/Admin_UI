@@ -73,7 +73,9 @@
         <div class="shape3" id="shape3"></div>
         <div class="shape4" id="shape4"></div>
         <div class="centerLine"></div>
-        <div class="neonText" id="systemText"><span style="float: left;">{{systemText}}</span><div class="col-1 blinker"></div></div>
+        <div class="neonText" id="systemText"><span style="float: left;">{{systemText}}</span>
+            <div class="col-1 blinker"></div>
+        </div>
         <div class="row loadingBox">
             <div class="col-1" id="box-1"></div>
             <div class="col-1" id="box-2"></div>
@@ -141,21 +143,20 @@
         </div>
     </div>
 </section>
-<div class="jarvisSection bgGrid" *ngIf="loader2 === false">
-    <!-- <button class="ai">Click Me</button> -->
+<div class="jarvisSection bgGrid" id="jarvisSystem" *ngIf="loader2 === false">
     <div id="leftmenu">
         <div id="date_time">
             <div id="date" class="semi_arc e4">
                 <div class="semi_arc_2 e4_1">
                     <div class="counterspin4"></div>
                 </div>
-                <div style="font-size: 40px; margin-top: 25px;">04</div>
-                <div style="font-size: 25px;">January</div>
+                <div style="font-size: 40px; margin-top: 13px;">{{dateNow}}</div>
+                <div style="font-size: 25px;">{{monthNow}}</div>
             </div>
 
             <div id="time" class="arc e1">
-                <div style="font-size: 23px; margin-left: -10px; margin-top: 23px;">23:41</div>
-                <div style="font-size: 15px; margin-left: 40px; margin-top: -30px; display: inline;">31</div>
+                <div style="font-size: 23px; margin-left: -10px; margin-top: 20px;">{{time}}</div>
+                <div style="font-size: 15px; margin-left: 40px; margin-top: -30px; display: inline;">{{seconds}}</div>
                 <div style="font-size: 17px; margin-top: 20px;">Tuesday</div>
             </div>
         </div>
@@ -175,7 +176,7 @@
             <p id="proc" class="caption" style="font-size: 20px;margin-left: 5px;">Processes: 73</p>
         </span>
 
-        <p class="title">Shortcuts</p>
+        <p class="title" style="padding-top: 105px !important;">Shortcuts</p>
         <div class="hline title_underline"></div>
 
         <div class="menu">
@@ -205,12 +206,8 @@
                     <p class="caption" style="margin-left: 5px;">Custom Path 2</p>
                 </span>
             </button>
-            <button class="menuitem"> <span class="entypo-right-open">
-                    <p class="caption" style="margin-left: 5px;">Custom Path 3</p>
-                </span>
-            </button>
         </div>
-        <p class="title" style="padding-top: 90px !important;">Social</p>
+        <p class="title" style="padding-top: 80px !important;">Social</p>
         <div class="hline title_underline"></div>
 
         <div class="app_icon entypo-facebook-squared"></div>
@@ -239,11 +236,25 @@
               - Weather widget next to date/time
               - Place quick access taskbar down bottom
               - Fill in space at the top</textarea>
+
+    </div>
+    <div class="weatherWidget" id="topbar">
+        <app-weather-widget></app-weather-widget>
     </div>
     <!-- Top Bar -->
-    <div class="topBar"></div>
-    <div class="topBar2">
-        <h5 style="color: #fff;text-align: center;font-weight: 800;transform: skew(43deg);">2022</h5>
+    <div class="topBar2" id="topbar2">
+        <h5 style="color: #fff;text-align: center;font-weight: 800;transform: skew(43deg);">
+            <i class="material-icons">wifi</i>
+            <i class="material-icons">wifi_tethering_off</i>
+            <i class="material-icons">videocam_off</i>
+            <i class="material-icons">photo_camera</i>
+            <i class="material-icons">bluetooth_disabled</i>
+            <i class="material-icons">volume_up</i>
+            <i class="material-icons">battery_charging_full</i>
+        </h5>
+    </div>
+    <div class="bottomBar">
+        
     </div>
     <!-- Arc Reactor -->
     <div id="arc_container">
@@ -324,17 +335,14 @@
             </div>
         </div>
     </div>
-    <!-- Particles -->
-    <!-- Left Menu Particles -->
-    <!-- <canvas id="particle1" width="20" height="500"></canvas> 
-  <canvas id="particle1_1" width="40" height="510"></canvas>
-  <canvas id="particle1_2" width="40" height="510"></canvas> -->
     <div id="particle1_3">
         > > > >
     </div>
     <div class="customCanvasPart1" id="ccp1"></div>
     <div class="customCanvasPart2" id="ccp2"></div>
+    <div class="customCanvasPart3" id="ccp2"></div>
     <div class="canvasContainer2"></div>
+    <div class="canvasContainer3"></div>
     <div id="particle2">▶<br />▶<br />▶</div>
     <div id="particle3" class="vline">
         <div id="particle4" class="vline">
@@ -350,7 +358,7 @@
             </div>
         </div>
     </div>
-    <div class="filesModal" id="filesModalId">
+    <div class="filesModal" id="filesModalId" *ngIf="showFilesModal">
         <div class="topBarFiles" id="filesModalIdheader">
             <h5 style="font-family:'Courier New', Courier, monospace !important;">Account Details</h5>
             <div>
@@ -360,15 +368,15 @@
             </div>
         </div>
         <div class="filesBody">
-            <ul>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-                <li class="filesListing">File : ABC.txt</li>
-            </ul>
+            <div class="row">
+                <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2" *ngFor="let item of recordFiles">
+                    <div class="file">
+                        <i class="fa fa-4x fa-file"></i>
+                        <p class="fileFooter">{{item.Name}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
 </div>

@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
   styleUrls: ['./accounts.component.scss']
 })
-export class AccountsComponent implements OnInit {
+export class AccountsComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
   loader: boolean = false;
   loader2: boolean = true;
   maximizer: boolean = false;
+  showFilesModal: boolean = false;
   pwidth: number = 0;
   iterator: number = 0;
   iterator2: number = 1;
@@ -29,14 +30,46 @@ export class AccountsComponent implements OnInit {
   widthChecker: number = 1890;
   windowWidth: number = 19.5;
   subtractorCheck: number = 0;
-  rightCheck:number = 20.65;
-  shape3W:number = 4;
-  shape6W:number = 48;
-  boxWidth:number = 20;
+  rightCheck: number = 20.65;
+  shape3W: number = 4;
+  shape6W: number = 48;
+  boxWidth: number = 20;
+  time: any = '';
+  seconds: any = '';
+  dateNow: any = '';
+  monthNow: any = '';
+  months: Array<any> = [
+    'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  recordFiles: any = [
+    { Name: 'Record1.xlsc', Dated: '01-Jan-22' }, { Name: 'Record2.xlsc', Dated: '02-Jan-22' }, { Name: 'Record3.xlsc', Dated: '03-Jan-22' }, { Name: 'Record4.xlsc', Dated: '04-Jan-22' }, { Name: 'Record5.xlsc', Dated: '05-Jan-22' }, { Name: 'Record6.xlsc', Dated: '06-Jan-22' }, { Name: 'Record7.xlsc', Dated: '07-Jan-22' }, { Name: 'Record8.xlsc', Dated: '08-Jan-22' }, { Name: 'Record9.xlsc', Dated: '09-Jan-22' }, { Name: 'Record10.xlsc', Dated: '10-Jan-22' }, { Name: 'Record11.xlsc', Dated: '11-Jan-22' }, { Name: 'Record12.xlsc', Dated: '12-Jan-22' }, { Name: 'Record13.xlsc', Dated: '13-Jan-22' }
+  ];
   ngOnInit(): void {
-    console.log(window.innerWidth);
+
+
+    // setTimeout(() => {
+    //   this.maximize('filesModalId');
+    // }, 100);
+
+    if (window.localStorage.getItem('Status') === 'Open') {
+      this.loader2 = false;
+    }
+    var dt = new Date();
+    this.dateNow = dt.getDate();
+    this.monthNow = this.months[dt.getMonth()];
+    let hrs = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    let hrsArr = hrs.split(":");
+    this.time = hrsArr[0] + ':' + hrsArr[1];
+    this.seconds = hrsArr[2];
+    setInterval(() => {
+      var dt = new Date();
+      let hrs = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+      let hrsArr = hrs.split(":");
+      this.time = hrsArr[0] + ':' + hrsArr[1];
+      this.seconds = hrsArr[2];
+    }, 999);
     setTimeout(() => {
-      if(window.innerWidth < 1500){
+      if (window.innerWidth < 1500) {
         this.systemText2 = 'INITIATING JARVIS OS . . .';
       }
       while (this.widthChecker > 1000) {
@@ -48,8 +81,6 @@ export class AccountsComponent implements OnInit {
           this.boxWidth = this.boxWidth - 0.655;
           this.shape6W = this.shape6W - 0.599;
         }
-        console.clear();
-        console.log(this.windowWidth);
         if (window.innerWidth === this.widthChecker) {
           $("#shape4").css('width', this.windowWidth + '%');
           $("#shape3").css('width', this.shape3W + '%');
@@ -57,16 +88,13 @@ export class AccountsComponent implements OnInit {
           $(".col-1").css('width', this.boxWidth + 'px');
           $("#shape6").css('width', this.shape6W + '%');
           $("#shape7").css('width', '20.5%');
-          console.log('broken');
           break;
         }
         this.subtractorCheck++;
         this.widthChecker--;
       }
-      // if (window.innerWidth < 1500 && window.innerWidth > 1200){
-      //     $("#shape3").css('right','16%');
-      //     $("#shape4").css('width','14.5%');
-      //   }
+      window.localStorage.setItem('Status', 'Open');
+      this.fullScreen();
     }, 100);
     this.systemtext3[0] = 'Analyzing Login Activity . . .';
     this.systemtext3[1] = 'Analyzing System Files . . .';
@@ -130,11 +158,18 @@ export class AccountsComponent implements OnInit {
       }, 950);
     }, 500);
     setTimeout(() => {
-      this.loader2 = true;
+      this.loader2 = false;
     }, 15000);
-
   }
-
+  fullScreen() {
+    let elem: any = document.getElementById('jarvisSystem');
+    let methodToBeInvoked = elem.requestFullscreen;
+    if (methodToBeInvoked) methodToBeInvoked.call(elem);
+  }
+  element: any = [];
+  ngOnDestroy(): void {
+    window.localStorage.clear();
+  }
   maximize(id: any) {
     if (this.maximizer) {
       $("#" + id).css('width', '40%');
@@ -149,6 +184,8 @@ export class AccountsComponent implements OnInit {
       $("#particle2").css('opacity', '1');
       $("#ccp1").css('opacity', '1');
       $("#ccp2").css('opacity', '1');
+      $("#topbar").css('opacity', '1');
+      $("#topbar2").css('opacity', '1');
     }
     else {
       $("#" + id).css('width', '100%');
@@ -162,10 +199,26 @@ export class AccountsComponent implements OnInit {
       $("#particle2").css('opacity', '0.02');
       $("#ccp1").css('opacity', '0.02');
       $("#ccp2").css('opacity', '0.02');
+      $("#topbar").css('opacity', '0.02');
+      $("#topbar2").css('opacity', '0.02');
     }
     this.maximizer = !this.maximizer;
   }
   closeWindow(id: any) {
+    $("#" + id).css('width', '40%');
+    $("#" + id).css('height', '50vh');
+    $("#" + id).css('top', '25%');
+    $("#" + id).css('left', '30%');
+    $("#leftmenu").css('opacity', '1');
+    $("#rightmenu").css('opacity', '1');
+    $("#date_time").css('opacity', '1');
+    $("#date").css('opacity', '1');
+    $("#time").css('opacity', '1');
+    $("#particle2").css('opacity', '1');
+    $("#ccp1").css('opacity', '1');
+    $("#ccp2").css('opacity', '1');
+    $("#topbar").css('opacity', '1');
+    $("#topbar2").css('opacity', '1');
     $("#" + id).hide(150);
   }
 }

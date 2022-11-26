@@ -223,11 +223,9 @@
     line-height: 129px;
 }
 
-
-
 .customCanvasPart1 {
     height: 550px;
-    width: 1.25%;
+    width: 25px;
     left: 260px;
     top: 440px;
     transform: skewY(55deg);
@@ -236,19 +234,15 @@
 }
 
 .canvasContainer2 {
-    border-left: 10px solid transparent;
-    border-right: 4px solid #000;
-    border-top: 15px solid #000;
-    border-bottom: 15px solid #000;
-    border-radius: 30%;
+    border-left: 10px solid #000;
+    border-right: 4px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
     position: absolute;
-    left: 255px;
+    left: 260px;
     top: 480px;
-    z-index: 1;
     height: 90px;
-    width: 0px;
 }
-
 .customCanvasPart2 {
     border-left: 10px solid rgba(2, 254, 255, 0.2);
     z-index: 2;
@@ -258,6 +252,27 @@
     width: 0;
     left: 255px;
     top: 480px;
+    position: absolute;
+}
+.canvasContainer3 {
+    border-left: 4px solid transparent;
+    border-right: 12px solid #000;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    position: absolute;
+    left: 269px;
+    top: 622px;
+    height: 95px;
+}
+.customCanvasPart3 {
+    border-right: 10px solid rgba(2, 254, 255, 0.2);
+    z-index: 2;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    height: 90px;
+    width: 0;
+    left: 277px;
+    top: 625px;
     position: absolute;
 }
 
@@ -453,11 +468,11 @@
         0 0 7px #fff,
         0 0 10px #fff,
         0 0 20px #fff,
-        0 0 30px rgba(10, 144, 253, 0.384),
-        0 0 40px rgba(10, 144, 253, 0.3),
-        0 0 50px rgba(10, 144, 253, 0.250),
-        0 0 60px rgba(10, 144, 253, 0.185),
-        0 0 70px rgba(10, 144, 253, 0.100);
+        0 0 30px rgba(10, 225, 253, 0.3),
+        0 0 40px rgba(10, 225, 253, 0.260),
+        0 0 50px rgba(10, 225, 253, 0.210),
+        0 0 60px rgba(10, 225, 253, 0.155),
+        0 0 70px rgba(10, 225, 253, 0.060);
 }
 
 .tallerBox {
@@ -467,8 +482,8 @@
 .bgGrid {
     background-size: 10px 10px;
     background-image:
-        linear-gradient(to right, rgba(2, 255, 255, 0.116) 0.5px, transparent 1px),
-        linear-gradient(to bottom, rgb(2, 254, 255, 0.116) 0.5px, transparent 1px);
+        linear-gradient(to right, rgba(2, 255, 255, 0.066) 0.5px, transparent 1px),
+        linear-gradient(to bottom, rgb(2, 254, 255, 0.066) 0.5px, transparent 1px);
 }
 
 i {
@@ -489,14 +504,40 @@ i {
     position: absolute;
     background: rgba(2, 254, 255, 0.25);
     border: 0.5px solid rgba(2, 254, 255, 0.5);
-    width: 33%;
+    width: 45%;
     height: 30px;
     transform: skew(-45deg);
-    margin-left: 33%;
+    margin-left: 28%;
+}
+
+.topBar2 i{
+    margin: -12px 5px 5px 5px;
+    transition: 0.5s !important;
+}
+
+.topBar2 i:hover{
+    font-size: 28pt !important;
+}
+
+.bottomBar{
+    width:100%;
+    height: 50px;
+    position: absolute;
+    bottom: -10px;
+    
+    background: #02ffff34;
+    border-top:1px solid #16ebeb8a
+}
+
+.weatherWidget{
+    position: absolute;
+    right: 5px;
+    bottom: -40px;
+    width: 360px;
 }
 
 .filesModal {
-    background-image: linear-gradient(to bottom right, #02c4ff7e, #02afff23);
+    background-image: linear-gradient(to bottom right, #02c4ff4b, #02afff10);
     border: 0.5px solid #02c4ffd0;
     padding: 0px 0px 0px 0px !important;
     top: 25%;
@@ -520,7 +561,9 @@ i {
     cursor: move;
 }
 
-.filesBody {}
+.filesBody {
+    padding: 25px !important;
+}
 
 .filesListing {
     font-size: 8pt;
@@ -536,4 +579,17 @@ i {
     background: #02fff254;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 #02fff238, 0 6px 20px 0 #02fff238;
+}
+.file{
+    margin: 10px !important;
+    text-align: center !important;
+    width: fit-content;
+    height: fit-content;
+    display:grid;
+}
+.file i{
+    font-size: 32pt !important;
+}
+.fileFooter{
+    font-size: 8pt !important;
 }

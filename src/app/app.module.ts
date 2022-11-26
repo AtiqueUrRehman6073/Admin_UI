@@ -29,6 +29,7 @@ import { AddNewOrderFormComponent } from './components/add-new-order-form/add-ne
 import { EmployeesListingComponent } from './components/employees-listing/employees-listing.component';
 import { AddNewMemberFormComponent } from './components/add-new-member-form/add-new-member-form.component';
 import { AccountsComponent } from './Views/accounts/accounts.component';
+import { WeatherWidgetComponent } from './components/weather-widget/weather-widget.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 registerAllModules();
@@ -50,6 +51,7 @@ registerAllModules();
     EmployeesListingComponent,
     AddNewMemberFormComponent,
     AccountsComponent,
+    WeatherWidgetComponent,
   ],
   imports: [
     BrowserModule,
