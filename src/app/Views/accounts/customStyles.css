@@ -385,10 +385,12 @@
 }
 
 .neonText {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: 500;
     position: absolute;
-    top: 25px;
+    top: 35px;
     left: 250px;
-    font-size: 34pt;
+    font-size: 38pt;
     color: #fff;
     text-shadow:
         0 0 7px #fff,
@@ -399,6 +401,26 @@
         0 0 92px #0af,
         0 0 102px #0af,
         0 0 151px #0af;
+}
+
+.blinker {
+    float: right;
+    margin-top: -13px !important;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .loadingBox {
