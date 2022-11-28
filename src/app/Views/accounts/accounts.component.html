@@ -185,7 +185,7 @@
                 </span>
             </button>
             <button class="menuitem"> <span class="entypo-right-open">
-                    <p class="caption" style="margin-left: 5px;">Documents</p>
+                    <p class="caption" style="margin-left: 5px;" (click)="openDocs()">Documents</p>
                 </span>
             </button>
             <button class="menuitem"> <span class="entypo-right-open">
@@ -242,6 +242,20 @@
         <app-weather-widget></app-weather-widget>
     </div>
     <!-- Top Bar -->
+    <div class="topBarPC">
+        <div class="topBarP2"></div>
+        <div class="topBarP1"></div>
+        <div class="topBarP1"></div>
+        <div class="topBarP1" id="lPart1"></div>
+        <div class="topBarP1" id="xlPart1"></div>
+    </div>
+    <div class="topBarPCR">
+        <div class="topBarP1"></div>
+        <div class="topBarP1"></div>
+        <div class="topBarP1" id="lPart2"></div>
+        <div class="topBarP1" id="xlPart2"></div>
+        <div class="topBarP2"></div>
+    </div>
     <div class="topBar2" id="topbar2">
         <h5 style="color: #fff;text-align: center;font-weight: 800;transform: skew(43deg);">
             <i class="material-icons">wifi</i>
@@ -254,7 +268,7 @@
         </h5>
     </div>
     <div class="bottomBar">
-        
+
     </div>
     <!-- Arc Reactor -->
     <div id="arc_container">
@@ -369,7 +383,7 @@
         </div>
         <div class="filesBody">
             <div class="row">
-                <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2" *ngFor="let item of recordFiles">
+                <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 filer" *ngFor="let item of recordFiles">
                     <div class="file">
                         <i class="fa fa-4x fa-file"></i>
                         <p class="fileFooter">{{item.Name}}</p>
@@ -379,4 +393,54 @@
         </div>
     </div>
 
+
+    <nav class="menuToggler">
+        <input  class="menu-toggler" id="menuToggle" type="checkbox" (click)="menuSettle()">
+        <label for="menu-toggler"></label>
+        <ul>
+            <li class="menu-item">
+                <a class="fas fa-cat" href=""></a>
+            </li>
+            <li class="menu-item">
+                <a class="fas fa-cookie-bite" href="#"></a>
+            </li>
+            <li class="menu-item">
+                <a class="fab fa-earlybirds" href="#"></a>
+            </li>
+            <li class="menu-item">
+                <a class="fab fa-fly" href="#"></a>
+            </li>
+            <li class="menu-item">
+                <a class="far fa-gem" href="#"></a>
+            </li>
+            <li class="menu-item">
+                <a class="fas fa-glass-cheers" href="#"></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="bgAnim">
+        <svg>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="SourceGraphic" operator="out" result="glow" />
+                <feFlood flood-color="white" flood-opacity="0.2" />
+                <feComposite in2="SourceGraphic" operator="atop" result="light" />
+                <feComposite in="glow" in2="light" />
+            </filter>
+            <pattern id="p" patternUnits="userSpaceOnUse" width="180px" height="120px"
+                patternTransform="scale(1,0.8660254)">
+                <g filter="url(#glow)">
+                    <g class="wrapper">
+                        <path id="hex" pathLength="388.5" d="M-30,-60 30,-60 60,0
+                            30,60 -30,60 -60,0Z" transform="scale(0.935)" />
+                    </g>
+                    <use xlink:href="#hex" x="0" y="+120" />
+                    <use xlink:href="#hex" x="+90" y="+60" />
+                    <use xlink:href="#hex" x="+180" y="0" />
+                    <use xlink:href="#hex" x="+180" y="120" />
+                </g>
+            </pattern>
+            <rect fill="url(#p)" width="100%" height="100%" />
+        </svg>
+    </div>
 </div>

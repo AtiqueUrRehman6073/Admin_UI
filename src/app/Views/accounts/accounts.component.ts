@@ -71,6 +71,12 @@ export class AccountsComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       if (window.innerWidth < 1500) {
         this.systemText2 = 'INITIATING JARVIS OS . . .';
+        $("#lPart1").hide();
+        $("#lPart2").hide();
+      }
+      if (window.innerWidth < 1600) {
+        $("#xlPart1").hide();
+        $("#xlPart2").hide();
       }
       while (this.widthChecker > 1000) {
         if (this.subtractorCheck === 30) {
@@ -94,8 +100,8 @@ export class AccountsComponent implements OnInit, OnDestroy {
         this.widthChecker--;
       }
       window.localStorage.setItem('Status', 'Open');
-      this.fullScreen();
-    }, 100);
+      this.menuSettle();
+    }, 200);
     this.systemtext3[0] = 'Analyzing Login Activity . . .';
     this.systemtext3[1] = 'Analyzing System Files . . .';
     this.systemtext3[2] = 'Retreiving Work Backup . . .';
@@ -161,6 +167,13 @@ export class AccountsComponent implements OnInit, OnDestroy {
       this.loader2 = false;
     }, 15000);
   }
+  menuSettle(){
+    if ($("#menuToggle").is(':checked')) {
+      $(".menuToggler").css('right', '200px');
+    }
+    else
+      $(".menuToggler").css('right', '50px');
+  }
   fullScreen() {
     let elem: any = document.getElementById('jarvisSystem');
     let methodToBeInvoked = elem.requestFullscreen;
@@ -202,6 +215,18 @@ export class AccountsComponent implements OnInit, OnDestroy {
       $("#topbar").css('opacity', '0.02');
       $("#topbar2").css('opacity', '0.02');
     }
+    setTimeout(() => {
+      let x: any = 12;
+      x = $("#filesModalId").width();
+      if (x < 1300) {
+        $(".filer").removeClass('col-xl-1');
+        $(".filer").addClass('col-xl-2');
+      }
+      else {
+        $(".filer").addClass('col-xl-1');
+        $(".filer").removeClass('col-xl-2');
+      }
+    }, 200);
     this.maximizer = !this.maximizer;
   }
   closeWindow(id: any) {
@@ -220,5 +245,21 @@ export class AccountsComponent implements OnInit, OnDestroy {
     $("#topbar").css('opacity', '1');
     $("#topbar2").css('opacity', '1');
     $("#" + id).hide(150);
+  }
+  openDocs() {
+    $("#filesModalId").show(150);
+    this.showFilesModal = true;
+    setTimeout(() => {
+      let x: any = 12;
+      x = $("#filesModalId").width();
+      if (x < 1300) {
+        $(".filer").removeClass('col-xl-1');
+        $(".filer").addClass('col-xl-2');
+      }
+      else {
+        $(".filer").addClass('col-xl-1');
+        $(".filer").removeClass('col-xl-2');
+      }
+    }, 200);
   }
 }

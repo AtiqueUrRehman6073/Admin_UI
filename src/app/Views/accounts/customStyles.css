@@ -243,6 +243,7 @@
     top: 480px;
     height: 90px;
 }
+
 .customCanvasPart2 {
     border-left: 10px solid rgba(2, 254, 255, 0.2);
     z-index: 2;
@@ -254,6 +255,7 @@
     top: 480px;
     position: absolute;
 }
+
 .canvasContainer3 {
     border-left: 4px solid transparent;
     border-right: 12px solid #000;
@@ -264,6 +266,7 @@
     top: 622px;
     height: 95px;
 }
+
 .customCanvasPart3 {
     border-right: 10px solid rgba(2, 254, 255, 0.2);
     z-index: 2;
@@ -504,32 +507,31 @@ i {
     position: absolute;
     background: rgba(2, 254, 255, 0.25);
     border: 0.5px solid rgba(2, 254, 255, 0.5);
-    width: 45%;
+    width: 40%;
     height: 30px;
     transform: skew(-45deg);
-    margin-left: 28%;
+    margin-left: 30%;
 }
 
-.topBar2 i{
+.topBar2 i {
     margin: -12px 5px 5px 5px;
-    transition: 0.5s !important;
+    transition: 0.25s !important;
 }
 
-.topBar2 i:hover{
+.topBar2 i:hover {
     font-size: 28pt !important;
 }
 
-.bottomBar{
-    width:100%;
+.bottomBar {
+    width: 100%;
     height: 50px;
     position: absolute;
     bottom: -10px;
-    
     background: #02ffff34;
-    border-top:1px solid #16ebeb8a
+    border-top: 1px solid #16ebeb8a
 }
 
-.weatherWidget{
+.weatherWidget {
     position: absolute;
     right: 5px;
     bottom: -40px;
@@ -547,6 +549,21 @@ i {
     position: absolute;
     z-index: 10000;
     transition: 0.5s;
+    animation: animatedFadeIn 0.5s;
+}
+
+@keyframes animatedFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .topBarFiles {
@@ -561,8 +578,47 @@ i {
     cursor: move;
 }
 
+.topBarP1 {
+    width: 10px;
+    height: 30px;
+    background: rgba(2, 254, 255, 0.25);
+    border: 0.5px solid rgba(2, 254, 255, 0.5);
+    transform: skew(-45deg);
+    margin: 0px 2px 0px 2px;
+}
+
+.topBarP2 {
+    width: 30px;
+    height: 30px;
+    background: rgba(2, 254, 255, 0.25);
+    border: 0.5px solid rgba(2, 254, 255, 0.5);
+    transform: skew(-45deg);
+    margin: 0px 3px 0px 3px;
+}
+
+.topBarPC {
+    top: 0px;
+    padding: 0% !important;
+    position: absolute;
+    left: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 4.5%;
+}
+
+.topBarPCR {
+    top: 0px;
+    padding: 0% !important;
+    position: absolute;
+    right: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 4.5%;
+}
+
 .filesBody {
     padding: 25px !important;
+    overflow: scroll !important;
 }
 
 .filesListing {
@@ -580,16 +636,316 @@ i {
     cursor: pointer;
     box-shadow: 0 4px 8px 0 #02fff238, 0 6px 20px 0 #02fff238;
 }
-.file{
+
+.file {
     margin: 10px !important;
     text-align: center !important;
     width: fit-content;
     height: fit-content;
-    display:grid;
+    display: grid;
 }
-.file i{
+
+.file i {
     font-size: 32pt !important;
 }
-.fileFooter{
+
+.fileFooter {
     font-size: 8pt !important;
+}
+
+
+
+.menuToggler{
+    position: absolute;
+    right: 200px;
+    top: 45%;
+    transition: 0.5s;
+}
+.menu-toggler label{
+    top: 25px !important;
+}
+
+.menu-toggler {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu-toggler:hover+label,
+.menu-toggler:hover+label:before,
+.menu-toggler:hover+label:after {
+    background: #02feff;
+}
+
+.menu-toggler:checked+label {
+    background: transparent;
+}
+
+.menu-toggler:checked+label:before,
+.menu-toggler:checked+label:after {
+    top: 0;
+    width: 40px;
+    transform-origin: 50% 50%;
+}
+
+.menu-toggler:checked+label:before {
+    transform: rotate(45deg) translateY(-15px) translateX(-15px);
+}
+
+.menu-toggler:checked+label:after {
+    transform: rotate(-45deg);
+}
+
+.menu-toggler:checked~ul .menu-item {
+    opacity: 1;
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(1) {
+    transform: rotate(0deg) translate(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(2) {
+    transform: rotate(60deg) translateX(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(3) {
+    transform: rotate(120deg) translateX(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(4) {
+    transform: rotate(180deg) translateX(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(5) {
+    transform: rotate(240deg) translateX(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(6) {
+    transform: rotate(300deg) translateX(-110px);
+}
+
+.menu-toggler:checked~ul .menu-item a {
+    pointer-events: auto;
+}
+
+.menu-toggler+label {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: rgba(7, 215, 243, 0.267);
+    transition: transform 0.5s top 0.5s;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 20px !important;
+    right: 0;
+    margin: auto;
+}
+
+.menu-toggler+label:before,
+.menu-toggler+label:after {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: rgba(66, 225, 247, 0.521);
+    transition: transform 0.5s top 0.5s;
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+}
+
+.menu-toggler+label:before {
+    top: 10px !important;
+}
+
+.menu-toggler+label:after {
+    top: -10px !important;
+}
+
+.menu-item:nth-child(1) a {
+    transform: rotate(0deg);
+}
+
+.menu-item:nth-child(2) a {
+    transform: rotate(-60deg);
+}
+
+.menu-item:nth-child(3) a {
+    transform: rotate(-120deg);
+}
+
+.menu-item:nth-child(4) a {
+    transform: rotate(-180deg);
+}
+
+.menu-item:nth-child(5) a {
+    transform: rotate(-240deg);
+}
+
+.menu-item:nth-child(6) a {
+    transform: rotate(-300deg);
+}
+
+.menu-item {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.menu-item a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    line-height: 80px;
+    color: rgba(11, 239, 255, 0.562);
+    background: rgba(93, 219, 250, 0.295);
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.menu-item a:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: rgb(0, 217, 255);
+    background: rgba(108, 231, 247, 0.068);
+    font-size: 44.44px
+}
+
+
+.bgAnim {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+    height: 98vh;
+}
+
+svg {
+    width: 100%;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+    opacity: 0.15;
+    height: 90vh;
+}
+
+
+#p {
+    fill: black;
+    fill-opacity: 0.2;
+    stroke: white;
+    stroke-width: 2.3px;
+    stroke-dasharray: 200 188.5;
+    animation: stroke-color 11s infinite linear;
+}
+
+#p .wrapper, #p use {
+    animation: draw 4s infinite linear;
+}
+
+#p use:nth-child(3) {
+    fill: white;
+    fill-opacity: 0.1;
+    animation-delay: -2s;
+}
+
+:root {
+    animation: back-color 11s infinite linear;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 388.5;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes stroke-color {
+    0% {
+        stroke: hsl(59, 93%, 55%);
+    }
+
+    16.667% {
+        stroke: hsl(91, 98%, 62%);
+    }
+
+    33.333% {
+        stroke: hsl(150, 100%, 70%);
+    }
+
+    50% {
+        stroke: hsl(180, 100%, 70%);
+    }
+
+    66.667% {
+        stroke: hsl(202, 100%, 70%);
+    }
+
+    83.333% {
+        stroke: hsl(0, 100%, 52%);
+    }
+
+    100% {
+        stroke: rgb(250, 160, 87);
+    }
+}
+
+@keyframes back-color {
+    0% {
+        background: hsl(0, 80%, 15%);
+    }
+
+    16.667% {
+        background: hsl(60, 80%, 15%);
+    }
+
+    33.333% {
+        background: hsl(120, 80%, 15%);
+    }
+
+    50% {
+        background: hsl(180, 80%, 15%);
+    }
+
+    66.667% {
+        background: hsl(240, 80%, 15%);
+    }
+
+    83.333% {
+        background: hsl(300, 80%, 15%);
+    }
+
+    100% {
+        background: hsl(360, 80%, 15%);
+    }
 }
