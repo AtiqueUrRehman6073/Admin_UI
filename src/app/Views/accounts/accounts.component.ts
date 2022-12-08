@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as $ from 'jquery';
+import Handsontable from 'handsontable';
+import { HotTableRegisterer } from '@handsontable/angular';
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
@@ -7,12 +9,16 @@ import * as $ from 'jquery';
 })
 export class AccountsComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor() {
+    this.licensekey = 'non-commercial-and-evaluation';
+  }
 
   loader: boolean = false;
   loader2: boolean = true;
   maximizer: boolean = false;
   showFilesModal: boolean = false;
+  showExcel: boolean = false;
+  controls: boolean = true;///////////
   pwidth: number = 0;
   iterator: number = 0;
   iterator2: number = 1;
@@ -44,13 +50,117 @@ export class AccountsComponent implements OnInit, OnDestroy {
   recordFiles: any = [
     { Name: 'Record1.xlsc', Dated: '01-Jan-22' }, { Name: 'Record2.xlsc', Dated: '02-Jan-22' }, { Name: 'Record3.xlsc', Dated: '03-Jan-22' }, { Name: 'Record4.xlsc', Dated: '04-Jan-22' }, { Name: 'Record5.xlsc', Dated: '05-Jan-22' }, { Name: 'Record6.xlsc', Dated: '06-Jan-22' }, { Name: 'Record7.xlsc', Dated: '07-Jan-22' }, { Name: 'Record8.xlsc', Dated: '08-Jan-22' }, { Name: 'Record9.xlsc', Dated: '09-Jan-22' }, { Name: 'Record10.xlsc', Dated: '10-Jan-22' }, { Name: 'Record11.xlsc', Dated: '11-Jan-22' }, { Name: 'Record12.xlsc', Dated: '12-Jan-22' }, { Name: 'Record13.xlsc', Dated: '13-Jan-22' }
   ];
+  licensekey: string = '';
+  hotid = 'gridId';
+  hotRegisterer = new HotTableRegisterer();
+  hotTable: any;
+  cols: any;
+  dataset: any[] = [
+    { id: 1, name: 'Ted Right', address: 'Wall Street' },
+    { id: 2, name: 'Frank Honest', address: 'Pennsylvania Avenue' },
+    { id: 3, name: 'Joan Well', address: 'Broadway' },
+    { id: 4, name: 'Gail Polite', address: 'Bourbon Street' },
+    { id: 5, name: 'Michael Fair', address: 'Lombard Street' },
+    { id: 6, name: 'Mia Fair', address: 'Rodeo Drive' },
+    { id: 7, name: 'Cora Fair', address: 'Sunset Boulevard' },
+    { id: 8, name: 'Jack Right', address: 'Michigan Avenue' },
+  ];
+  initializeControls() {
+    let container: any = document.getElementById('table');
+    this.hotTable = new Handsontable(container, {
+      licenseKey: 'non-commercial-and-evaluation',
+      invalidCellClassName: 'errorCell',
+      readOnlyCellClassName: 'disabledCell',
+      maxRows: 100,
+      comments: true,
+      columnHeaderHeight: 25,
+      preventOverflow: 'horizontal',
+      rowHeaders: true,
+      viewportColumnRenderingOffset: 27,
+      viewportRowRenderingOffset: 'auto',
+      colWidths: 150,
+      minRows: 50,
+      width: '100%',
+      height: '100vh',
+      rowHeights: 23,
+      fillHandle: {
+        direction: 'vertical',
+        autoInsertRow: true
+      },
+      // afterOnCellMouseUp: (event, coords, TD) => {
+      // },
+      // afterChange: (event: any) => {
+      // },
+      data: Handsontable.helper.createSpreadsheetData(100, 10),
+      minSpareRows: 1,
+      allowInsertRow: true,
+      stretchH: "all",
+      // allowInsertColumn: false,
+      // allowRemoveColumn: false,
+      // allowRemoveRow: false,
+      // autoWrapRow: false,
+      // autoWrapCol: false,
+      //  autoWrapRow: true,
+      // height: 487,
+      // maxRows: 22,
+      manualRowResize: true,
+      manualColumnResize: true,
+      hiddenColumns: {
+        columns: [10],
+        indicators: false
+      },
+      columns: [
+        {
+          data: 'credit',
+          type: 'numeric'
+        },
+        {
+          data: 'narration',
+          type: 'text',
+        },
+        {
+          data: 'id',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        },
+        {
+          data: 'Temp',
+          type: 'numeric'
+        }
+      ],
+      colHeaders: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+      manualRowMove: true,
+      manualColumnMove: true,
+      contextMenu: true,
+      filters: true,
+      dropdownMenu: true,
+    });
+  }
+
   ngOnInit(): void {
-
-
-    // setTimeout(() => {
-    //   this.maximize('filesModalId');
-    // }, 100);
-
     if (window.localStorage.getItem('Status') === 'Open') {
       this.loader2 = false;
     }
@@ -167,7 +277,7 @@ export class AccountsComponent implements OnInit, OnDestroy {
       this.loader2 = false;
     }, 15000);
   }
-  menuSettle(){
+  menuSettle() {
     if ($("#menuToggle").is(':checked')) {
       $(".menuToggler").css('right', '200px');
     }
@@ -194,9 +304,12 @@ export class AccountsComponent implements OnInit, OnDestroy {
       $("#date_time").css('opacity', '1');
       $("#date").css('opacity', '1');
       $("#time").css('opacity', '1');
+      $("#bottleContainerID").css('opacity', '1');
       $("#particle2").css('opacity', '1');
+      $("#particle1_3").css('opacity', '1');
       $("#ccp1").css('opacity', '1');
       $("#ccp2").css('opacity', '1');
+      $("#ccp3").css('opacity', '1');
       $("#topbar").css('opacity', '1');
       $("#topbar2").css('opacity', '1');
     }
@@ -210,10 +323,13 @@ export class AccountsComponent implements OnInit, OnDestroy {
       $("#date_time").css('opacity', '0.02');
       $("#date").css('opacity', '0.02');
       $("#particle2").css('opacity', '0.02');
+      $("#particle1_3").css('opacity', '0.02');
       $("#ccp1").css('opacity', '0.02');
       $("#ccp2").css('opacity', '0.02');
+      $("#ccp3").css('opacity', '0.02');
       $("#topbar").css('opacity', '0.02');
       $("#topbar2").css('opacity', '0.02');
+      $("#bottleContainerID").css('opacity', '0.02');
     }
     setTimeout(() => {
       let x: any = 12;
@@ -262,4 +378,85 @@ export class AccountsComponent implements OnInit, OnDestroy {
       }
     }, 200);
   }
+  openExcel() {
+    this.showExcel = true;
+    setTimeout(() => {
+      this.initializeControls();
+    }, 250);
+  }
+  closeExcel() {
+    this.showExcel = false;
+  }
+  showControls(){
+    this.controls = !this.controls;
+  }
+  // fileList: any = [];
+  // loadFileNames(dir: any) {
+  //   return new Promise((resolve, reject) => {
+  //     try {
+  //       var fileNames = new Array();
+  //       $.ajax({
+  //         url: dir,
+  //         success: function (data) {
+  //           for (var i = 1; i < $(data).find('li span.name').length; i++) {
+  //             var elem = $(data).find('li span.name')[i];
+  //             fileNames.push(elem.innerHTML);
+  //           }
+  //           return resolve(fileNames);
+  //         }
+  //       });
+  //     } catch (ex) {
+  //       return reject(ex);
+  //     }
+  //   });
+  // }
+  // getFileNames() {
+  //   this.loadFileNames('../')
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((error) => {
+  //       alert('Files could not be loaded. please check console for details');
+  //       console.error(error);
+  //     });
+  // $('#camera-open').change((event: any) => {
+  //   this.fileList = Array.prototype.slice.call(event.target.files);
+  //   var filePaths = this.fileList.map((file:any) => { return file.name; });
+  //   var onlyNames = filePaths.map((file:any) => { return file.split('/').pop().split('\\').pop(); });
+  //   console.log(onlyNames);
+  // });
+  // getFileNames() {
+  //   let fileNames: any = '';
+  //   $.ajax({
+  //     url: "/app/",
+  //     success: function (data) {
+  //       //console.log(data);
+  //       $(data).find("td > a").each(() => {
+  //         if (this.openFile($(this).attr("href"))) {
+  //           fileNames.push($(this).attr("href"));
+  //         }
+  //       });
+  //     }
+  //   });
+  //   console.log(fileNames);
+  // }
+  // openFile(file: any) {
+  //   var extension = file.substr((file.lastIndexOf('.') + 1));
+  //   switch (extension) {
+  //     case 'jpg':
+  //     case 'png':
+  //     case 'gif':   // the alert ended with pdf instead of gif.
+  //     case 'zip':
+  //     case 'rar':
+  //     case 'pdf':
+  //     case 'php':
+  //     case 'doc':
+  //     case 'docx':
+  //     case 'xls':
+  //     case 'xlsx':
+  //       return true;
+  //     default:
+  //       return false;
+  //   }
+  // };
 }

@@ -7,6 +7,7 @@ import { AddNewOrderFormComponent } from './components/add-new-order-form/add-ne
 import { EmployeesListingComponent } from './components/employees-listing/employees-listing.component';
 import { AddNewMemberFormComponent } from './components/add-new-member-form/add-new-member-form.component';
 import { AccountsComponent } from './Views/accounts/accounts.component';
+import { RoboticEyeComponent } from './components/robotic-eye/robotic-eye.component';
 
 const routes: Routes = [
   {path:'',component:LoginAdminComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'employees/workers',component:EmployeesListingComponent},
   {path:'employees/new',component:AddNewMemberFormComponent},
   {path:'admin/accounts',component:AccountsComponent},
+  {path:'admin/test',component:RoboticEyeComponent},
 ];
 
 @NgModule({

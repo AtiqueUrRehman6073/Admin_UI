@@ -539,7 +539,7 @@ i {
 }
 
 .filesModal {
-    background-image: linear-gradient(to bottom right, #02c4ff4b, #02afff10);
+    background-image: linear-gradient(to bottom right, #325a6670, #1b1b1b67);
     border: 0.5px solid #02c4ffd0;
     padding: 0px 0px 0px 0px !important;
     top: 25%;
@@ -655,13 +655,14 @@ i {
 
 
 
-.menuToggler{
+.menuToggler {
     position: absolute;
     right: 200px;
     top: 45%;
     transition: 0.5s;
 }
-.menu-toggler label{
+
+.menu-toggler label {
     top: 25px !important;
 }
 
@@ -856,7 +857,6 @@ svg {
     height: 90vh;
 }
 
-
 #p {
     fill: black;
     fill-opacity: 0.2;
@@ -948,4 +948,21 @@ svg {
     100% {
         background: hsl(360, 80%, 15%);
     }
+}
+
+.filer {
+    overflow: scroll !important;
+}
+
+.excelSheet {
+    width: 100% !important;
+    height: 100vh !important;
+    position: absolute !important;
+    top: 0% !important;
+    left: 0% !important;
+    padding: 0px 0px 0px 0px !important;
+    z-index: 100;
+    background-color: #3950508c;
+    border: 1px solid #ff6602;
+    transition: 0.5s;
 }

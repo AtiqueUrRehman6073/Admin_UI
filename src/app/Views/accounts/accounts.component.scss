@@ -150,7 +150,9 @@ section {
   padding: 5px 0px 0px 0px;
   overflow: -moz-hidden-unscrollable;
 }
-
+#table *{
+  padding: 0px !important;
+}
 h1 {
 	font-size: 2.5em;
 	text-decoration: underline;
@@ -228,14 +230,15 @@ $transforms:
 	font-size: calc(24px + (36 - 24)*(100vw - 320px)/(1280 - 320));
 }
 .bottleContainer {
-	color: #ffffff;
+	color: #00fdfd75;
 	display: flex;
 	font: bold 1em/1.5 "DM Mono", monospace;
   height: 10vh;
-  right: 0;
-  top: 80px;
+  right: -30px;
+  bottom: 16%;
   text-transform: uppercase;
   position: absolute;
+  animation: slideDown 10s ease;
 }
 .bottle {
 	margin: auto;
@@ -282,6 +285,39 @@ $transforms:
 	}
 }
 
+@keyframes slideDown {
+	0% {
+		bottom: -120px;
+  }
+  55%{
+    bottom: -120px;
+  }
+	60% {
+		bottom: 38%;
+  }
+  75%{
+    bottom: 16%;
+  }
+  100%{
+    bottom: 16%;
+  }
+}
+@keyframes mover {
+  0%{
+    bottom: 15%;
+    right: 90%;
+  }
+  50%{
+    bottom: 40%;
+    right: 45%;
+  }
+  100%{
+    bottom: 15%;
+    right: -30px;
+  }
+
+}
+
 @keyframes spin {
 	from {
 		transform: rotateZ(90deg) rotateX(-90deg);
@@ -309,9 +345,6 @@ $transforms:
   background: transparent;
   text-shadow: 10px 20px 30px #02feff;
 }
-
-
-
 
 @import url(./customStyles.css);
 @import url(http://weloveiconfonts.com/api/?family=entypo);

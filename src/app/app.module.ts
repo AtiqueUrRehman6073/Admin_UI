@@ -10,7 +10,7 @@ import { CustomGridComponent } from './components/custom-grid/custom-grid.compon
 import {HighchartGraphsComponent} from './components/highchart-graphs/highchart-graphs.component';
 import { registerAllModules } from 'handsontable/registry';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import HotTableModule from 'handsontable';
+import { HotTableModule } from '@handsontable/angular';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DecimalPipe,CommonModule } from '@angular/common';
@@ -30,6 +30,8 @@ import { EmployeesListingComponent } from './components/employees-listing/employ
 import { AddNewMemberFormComponent } from './components/add-new-member-form/add-new-member-form.component';
 import { AccountsComponent } from './Views/accounts/accounts.component';
 import { WeatherWidgetComponent } from './components/weather-widget/weather-widget.component';
+import { RoboticEyeComponent } from './components/robotic-eye/robotic-eye.component';
+import { LoadingAnimationComponent } from './components/loading-animation/loading-animation.component';
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 registerAllModules();
@@ -52,6 +54,8 @@ registerAllModules();
     AddNewMemberFormComponent,
     AccountsComponent,
     WeatherWidgetComponent,
+    RoboticEyeComponent,
+    LoadingAnimationComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,7 @@ registerAllModules();
     NgbModule,
     HttpClientModule,
     HighchartsChartModule,
+    HotTableModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

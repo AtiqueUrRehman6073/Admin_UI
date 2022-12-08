@@ -1,0 +1,150 @@
+<div class="animMainContainer">
+    <div class="arc1" id="arc1ID">
+        <div class="miniArcR1"></div>
+        <div class="miniArcR2"></div>
+        <div class="miniArcR3"></div>
+        <div class="miniArcR4"></div>
+        <div class="miniArcR5"></div>
+        <div class="miniArcR6"></div>
+        <div class="miniArcR7"></div>
+        <div class="miniArcR8"></div>
+        <div class="miniArcR9"></div>
+        <div class="miniArcR10"></div>
+
+        <div class="miniArcR11"></div>
+        <div class="miniArcR12"></div>
+        <div class="miniArcR13"></div>
+        <div class="miniArcR14"></div>
+        <div class="miniArcR15"></div>
+        <div class="miniArcR16"></div>
+        <div class="miniArcR17"></div>
+        <div class="miniArcR18"></div>
+        <div class="miniArcR19"></div>
+        <div class="miniArcR20"></div>
+        <div class="miniArcR21"></div>
+    </div>
+    <div class="arc2" id="arc2ID">
+        <div class="miniArc1"></div>
+        <div class="miniArc2"></div>
+        <div class="miniArc3"></div>
+        <div class="miniArc4"></div>
+        <div class="miniArc5"></div>
+        <div class="miniArc6"></div>
+        <div class="miniArc7"></div>
+        <div class="miniArc8"></div>
+        <div class="miniArc9"></div>
+        <div class="miniArc10"></div>
+        <div class="miniArc11"></div>
+        <div class="miniArc12"></div>
+        <div class="miniArc13"></div>
+        <div class="miniArc14"></div>
+        <div class="miniArc15"></div>
+        <div class="miniArc16"></div>
+        <div class="miniArc17"></div>
+        <div class="miniArc18"></div>
+        <div class="miniArc19"></div>
+        <div class="miniArc20"></div>
+        <div class="miniArc21"></div>
+
+        <div class="needle">
+            <div class="needleCenter"></div>
+            <div class="needlePin"></div>
+        </div>
+        <div class="needle2">
+            <div class="needleCenter2"></div>
+            <div class="needlePin2"></div>
+        </div>
+        <div id="vertical-center">
+            <div id="clock-container">
+                <div id="display-1" class="display-container display-size-12 display-no-0">
+                    <div class="segment-x segment-a" id="a"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-b" id="b"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-c" id="c"><span class="segment-border"></span></div>
+                    <div class="segment-x segment-d" id="d"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-e" id="e"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-f" id="f"><span class="segment-border"></span></div>
+                    <div class="segment-x segment-g" id="g"><span class="segment-border"></span></div>
+                </div>
+                <div id="display-2" class="display-container display-size-12 display-no-0">
+                    <div class="segment-x segment-a" id="a1"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-b" id="b1"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-c" id="c1"><span class="segment-border"></span></div>
+                    <div class="segment-x segment-d" id="d1"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-e" id="e1"><span class="segment-border"></span></div>
+                    <div class="segment-y segment-f" id="f1"><span class="segment-border"></span></div>
+                    <div class="segment-x segment-g" id="g1"><span class="segment-border"></span></div>
+                </div>
+            </div>
+            <p>RAM</p>
+        </div>
+    </div>
+    <div class="controlsAnim">
+        <div class="sideArmLeft">
+            <div class="armHeader">
+                <p>System Controls</p>
+            </div>
+            <div class="armBody">
+                <ul>
+                    <li>
+                        <h4>CPU</h4>
+                        <div class="progressBarContainer">
+                            <div class="barParticle" *ngFor="let x of CPULength">
+                                <span hidden>{{x}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>GPU</h4>
+                        <div class="progressBarContainer">
+                            <div class="barParticle" *ngFor="let x of GPULength">
+                                <span hidden>{{x}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Ram</h4>
+                        <div class="progressBarContainer">
+                            <div class="barParticle" *ngFor="let x of Ram">
+                                <span hidden>{{x}}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Fan Speed</h4>
+                        <div class="progressBarContainer">
+                            <div class="barParticle" *ngFor="let x of fanSpeed">
+                                <span hidden>{{x}}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="linkerTLC"></div>
+        <div class="linkerTL"></div>
+        <div class="linkerTLB"></div>
+    </div>
+    <div class="sideArmTopRight">
+        <div class="topSect">
+            <h4>Background Services</h4>
+            <img src="../../../assets/Images/raw.gif" alt="Img">
+        </div>
+        <div class="linkersRight">
+            <div class="linkerTRC"></div>
+            <div class="linkerTR"></div>
+            <div class="linkerTRB"></div>
+        </div>
+    </div>
+    <div class="sideLeft">
+
+    </div>
+    <div class="sideRight">
+        <img src="../../../assets/Images/procs.gif"/>
+        <div class="rightLinkers">
+            <div class="rightLinker1"></div>
+            <div class="rightLinker2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="sideArm1"></div>

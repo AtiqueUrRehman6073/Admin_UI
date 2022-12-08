@@ -10,6 +10,9 @@ export class WeatherWidgetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.closeWidget();
+    },5000);
   }
 
   closeWidget(){
