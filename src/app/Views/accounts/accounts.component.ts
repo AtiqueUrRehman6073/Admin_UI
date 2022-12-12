@@ -18,7 +18,7 @@ export class AccountsComponent implements OnInit, OnDestroy {
   maximizer: boolean = false;
   showFilesModal: boolean = false;
   showExcel: boolean = false;
-  controls: boolean = true;///////////
+  controls: boolean = false;///////////
   pwidth: number = 0;
   iterator: number = 0;
   iterator2: number = 1;

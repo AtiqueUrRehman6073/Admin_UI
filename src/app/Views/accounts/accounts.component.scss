@@ -808,4 +808,9 @@ $arc_radius: 125px;
   margin-top: -40px;
   border-color: rgba(2, 255, 255, 0.6);
 }
-
+.closerIc{
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  z-index: 10001;
+}

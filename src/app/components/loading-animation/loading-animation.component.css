@@ -18,7 +18,7 @@
     margin-right: auto;
     position: relative;
     animation-name: animateArc1, animateArc1Rotor, flasher;
-    animation-duration: 1.5s, 3s, 300ms;
+    animation-duration: 1s, 2s, 300ms;
     animation-iteration-count: 0.75, 0.75, 5;
 }
 
@@ -88,7 +88,7 @@
     margin-right: auto;
     position: relative;
     animation-name: animateArc2, animateArc2Rotor, flasher;
-    animation-duration: 1.5s, 3s, 300ms;
+    animation-duration: 1s, 2s, 300ms;
     animation-iteration-count: 0.75, 0.75, 5;
 }
 
@@ -167,7 +167,7 @@
     transform: rotate(46deg);
     position: relative;
     background: rgba(247, 52, 34, 0.788);
-    animation: animateMiniArc1 6s 1;
+    animation: animateMiniArc1 4.5s 1;
 }
 
 .miniArc2 {
@@ -179,7 +179,7 @@
     transform: rotate(46deg);
     position: relative;
     background: #f7611bc9;
-    animation: animateMiniArc2 6s 1;
+    animation: animateMiniArc2 4.5s 1;
 }
 
 .miniArc3 {
@@ -191,7 +191,7 @@
     transform: rotate(42deg);
     position: relative;
     background: #fd5421c9;
-    animation: animateMiniArc3 6s 1;
+    animation: animateMiniArc3 4.5s 1;
 }
 
 .miniArc4 {
@@ -203,7 +203,7 @@
     transform: rotate(40deg);
     position: relative;
     background: #f75128c9;
-    animation: animateMiniArc4 6s 1;
+    animation: animateMiniArc4 4.5s 1;
 }
 
 .miniArc5 {
@@ -215,7 +215,7 @@
     transform: rotate(35deg);
     position: relative;
     background: #fa6a16c9;
-    animation: animateMiniArc5 6s 1;
+    animation: animateMiniArc5 4.5s 1;
 }
 
 .miniArc6 {
@@ -227,7 +227,7 @@
     transform: rotate(30deg);
     position: relative;
     background: #fa743fc9;
-    animation: animateMiniArc6 6s 1;
+    animation: animateMiniArc6 4.5s 1;
 }
 
 .miniArc7 {
@@ -239,7 +239,7 @@
     transform: rotate(27deg);
     position: relative;
     background: #f78c28c9;
-    animation: animateMiniArc7 6s 1;
+    animation: animateMiniArc7 4.5s 1;
 }
 
 .miniArc8 {
@@ -251,7 +251,7 @@
     transform: rotate(23deg);
     position: relative;
     background: #f79d28e7;
-    animation: animateMiniArc8 6s 1;
+    animation: animateMiniArc8 4.5s 1;
 }
 
 .miniArc9 {
@@ -263,7 +263,7 @@
     transform: rotate(17deg);
     position: relative;
     background: #f79d28c5;
-    animation: animateMiniArc9 6s 1;
+    animation: animateMiniArc9 4.5s 1;
 }
 
 .miniArc10 {
@@ -275,7 +275,7 @@
     transform: rotate(11deg);
     position: relative;
     background: #f79d28c5;
-    animation: animateMiniArc10 6s 1;
+    animation: animateMiniArc10 4.5s 1;
 }
 
 .miniArc11 {
@@ -287,7 +287,7 @@
     transform: rotate(6deg);
     position: relative;
     background: #f7c028c5;
-    animation: animateMiniArc11 6s 1;
+    animation: animateMiniArc11 4.5s 1;
 }
 
 .miniArc12 {
@@ -299,7 +299,7 @@
     transform: rotate(3deg);
     position: relative;
     background: #f7d128e7;
-    animation: animateMiniArc12 6s 1;
+    animation: animateMiniArc12 4.5s 1;
 }
 
 .miniArc13 {
@@ -311,7 +311,7 @@
     transform: rotate(0deg);
     position: relative;
     background: #f7e228f1;
-    animation: animateMiniArc13 6s 1;
+    animation: animateMiniArc13 4.5s 1;
 }
 
 .miniArc14 {
@@ -323,7 +323,7 @@
     transform: rotate(-3deg);
     position: relative;
     background: #e9f728c5;
-    animation: animateMiniArc14 6s 1;
+    animation: animateMiniArc14 4.5s 1;
 }
 
 .miniArc15 {
@@ -335,7 +335,7 @@
     transform: rotate(-6deg);
     position: relative;
     background: #d8f728c5;
-    animation: animateMiniArc15 6s 1;
+    animation: animateMiniArc15 4.5s 1;
 }
 
 .miniArc16 {
@@ -347,7 +347,7 @@
     transform: rotate(-10deg);
     position: relative;
     background: #bff726ef;
-    animation: animateMiniArc16 6s 1;
+    animation: animateMiniArc16 4.5s 1;
 }
 
 .miniArc17 {
@@ -359,7 +359,7 @@
     transform: rotate(-15deg);
     position: relative;
     background: #85f728e0;
-    animation: animateMiniArc17 6s 1;
+    animation: animateMiniArc17 4.5s 1;
 }
 
 .miniArc18 {
@@ -371,7 +371,7 @@
     transform: rotate(-22deg);
     position: relative;
     background: #7bf728f8;
-    animation: animateMiniArc18 6s 1;
+    animation: animateMiniArc18 4.5s 1;
 }
 
 .miniArc19 {
@@ -383,7 +383,7 @@
     transform: rotate(-26deg);
     position: relative;
     background: #59cf15e8;
-    animation: animateMiniArc19 6s 1;
+    animation: animateMiniArc19 4.5s 1;
 }
 
 .miniArc20 {
@@ -395,7 +395,7 @@
     transform: rotate(-33deg);
     position: relative;
     background: #0dd31ddc;
-    animation: animateMiniArc20 6s 1;
+    animation: animateMiniArc20 4.5s 1;
 }
 
 .miniArc21 {
@@ -407,7 +407,7 @@
     transform: rotate(-38deg);
     position: relative;
     background: #03c22cc5;
-    animation: animateMiniArc21 6s 1;
+    animation: animateMiniArc21 4.5s 1;
 }
 
 @keyframes animateMiniArc21 {
@@ -797,7 +797,7 @@
     transform: rotate(134deg);
     position: relative;
     background: #f73928;
-    animation: animateMiniArc1 6s 1;
+    animation: animateMiniArc1 4.5s 1;
 }
 
 .miniArcR2 {
@@ -809,7 +809,7 @@
     transform: rotate(135deg);
     position: relative;
     background: #f73928;
-    animation: animateMiniArc1 6s 1;
+    animation: animateMiniArc1 4.5s 1;
 }
 
 .miniArcR3 {
@@ -821,7 +821,7 @@
     transform: rotate(140deg);
     position: relative;
     background: #fd5421;
-    animation: animateMiniArc3 6s 1;
+    animation: animateMiniArc3 4.5s 1;
 }
 
 .miniArcR4 {
@@ -833,7 +833,7 @@
     transform: rotate(145deg);
     position: relative;
     background: #f75128;
-    animation: animateMiniArc4 6s 1;
+    animation: animateMiniArc4 4.5s 1;
 }
 
 .miniArcR5 {
@@ -845,7 +845,7 @@
     transform: rotate(150deg);
     position: relative;
     background: #fa6a16;
-    animation: animateMiniArc5 6s 1;
+    animation: animateMiniArc5 4.5s 1;
 }
 
 .miniArcR6 {
@@ -857,7 +857,7 @@
     transform: rotate(155deg);
     position: relative;
     background: #fa743f;
-    animation: animateMiniArc6 6s 1;
+    animation: animateMiniArc6 4.5s 1;
 }
 
 .miniArcR7 {
@@ -869,7 +869,7 @@
     transform: rotate(160deg);
     position: relative;
     background: #f78c28;
-    animation: animateMiniArc7 6s 1;
+    animation: animateMiniArc7 4.5s 1;
 }
 
 .miniArcR8 {
@@ -881,7 +881,7 @@
     transform: rotate(165deg);
     position: relative;
     background: #f79d28e7;
-    animation: animateMiniArc8 6s 1;
+    animation: animateMiniArc8 4.5s 1;
 }
 
 .miniArcR9 {
@@ -893,7 +893,7 @@
     transform: rotate(170deg);
     position: relative;
     background: #f79d28c5;
-    animation: animateMiniArc9 6s 1;
+    animation: animateMiniArc9 4.5s 1;
 }
 
 .miniArcR10 {
@@ -905,7 +905,7 @@
     transform: rotate(175deg);
     position: relative;
     background: #f79d28c5;
-    animation: animateMiniArc10 6s 1;
+    animation: animateMiniArc10 4.5s 1;
 }
 
 .miniArcR11 {
@@ -917,7 +917,7 @@
     transform: rotate(2deg);
     position: relative;
     background: #f79d28c5;
-    animation: animateMiniArc10 6s 1;
+    animation: animateMiniArc10 4.5s 1;
 }
 
 .miniArcR12 {
@@ -929,7 +929,7 @@
     transform: rotate(3deg);
     position: relative;
     background: #f7d128e7;
-    animation: animateMiniArc12 6s 1;
+    animation: animateMiniArc12 4.5s 1;
 }
 
 .miniArcR13 {
@@ -941,7 +941,7 @@
     transform: rotate(4deg);
     position: relative;
     background: #f7e228f1;
-    animation: animateMiniArc13 6s 1;
+    animation: animateMiniArc13 4.5s 1;
 }
 
 .miniArcR14 {
@@ -953,7 +953,7 @@
     transform: rotate(8deg);
     position: relative;
     background: #e9f728c5;
-    animation: animateMiniArc14 6s 1;
+    animation: animateMiniArc14 4.5s 1;
 }
 
 .miniArcR15 {
@@ -965,7 +965,7 @@
     transform: rotate(12deg);
     position: relative;
     background: #d8f728c5;
-    animation: animateMiniArc15 6s 1;
+    animation: animateMiniArc15 4.5s 1;
 }
 
 .miniArcR16 {
@@ -977,7 +977,7 @@
     transform: rotate(16deg);
     position: relative;
     background: #bff726ef;
-    animation: animateMiniArc16 6s 1;
+    animation: animateMiniArc16 4.5s 1;
 }
 
 .miniArcR17 {
@@ -989,7 +989,7 @@
     transform: rotate(20deg);
     position: relative;
     background: #85f728e0;
-    animation: animateMiniArc17 6s 1;
+    animation: animateMiniArc17 4.5s 1;
 }
 
 .miniArcR18 {
@@ -1001,7 +1001,7 @@
     transform: rotate(25deg);
     position: relative;
     background: #7bf728f8;
-    animation: animateMiniArc18 6s 1;
+    animation: animateMiniArc18 4.5s 1;
 }
 
 .miniArcR19 {
@@ -1013,7 +1013,7 @@
     transform: rotate(30deg);
     position: relative;
     background: #59cf15e8;
-    animation: animateMiniArc19 6s 1;
+    animation: animateMiniArc19 4.5s 1;
 }
 
 .miniArcR20 {
@@ -1025,7 +1025,7 @@
     transform: rotate(35deg);
     position: relative;
     background: #0dd31ddc;
-    animation: animateMiniArc20 6s 1;
+    animation: animateMiniArc20 4.5s 1;
 }
 
 .miniArcR21 {
@@ -1037,7 +1037,7 @@
     transform: rotate(40deg);
     position: relative;
     background: #03c22cc5;
-    animation: animateMiniArc21 6s 1;
+    animation: animateMiniArc21 4.5s 1;
 }
 
 .needle {
@@ -1276,7 +1276,7 @@
 #clock-container {
     width: 200px;
     height: 200px;
-    animation: flasher 500ms 5;
+    animation: flasher 600ms 5;
     left: 78px;
     top: -50px;
     position: relative;
@@ -1287,7 +1287,7 @@
     width: 200px;
     height: 250px;
     border: 0.25px solid #00fdfd79;
-    animation-delay: 5s, 5s !important;
+    animation-delay: 4s, 4s !important;
     animation-name: widthChanger, flasher;
     animation-duration: 500ms, 300ms;
     animation-iteration-count: 1, 5;
@@ -1388,9 +1388,9 @@
     position: relative;
     top: -240px;
     left: 308px;
-    animation-delay: 5s !important;
+    animation-delay: 4s !important;
     animation-name: heightChangerTl, flasher;
-    animation-duration: 2600ms, 300ms;
+    animation-duration: 2000ms, 300ms;
     animation-iteration-count: 1, 5;
 }
 
@@ -1404,9 +1404,9 @@
     position: relative;
     top: -241px;
     left: 350px;
-    animation-delay: 5s !important;
+    animation-delay: 4s !important;
     animation-name: heightChangerTlb, flasher;
-    animation-duration: 3400ms, 300ms;
+    animation-duration: 2750ms, 300ms;
     animation-iteration-count: 1, 5;
 
 }
@@ -1421,9 +1421,9 @@
     position: relative;
     top: -240px;
     left: 35.1%;
-    animation-delay: 5s !important;
+    animation-delay: 4s !important;
     animation-name: heightChangerTlc, flasher;
-    animation-duration: 1500ms, 300ms;
+    animation-duration: 1000ms, 300ms;
     animation-iteration-count: 1, 5;
 
 }
@@ -1441,7 +1441,7 @@
     right: 302px;
     animation-delay: 0.01s !important;
     animation-name: heightChangerTl, flasher;
-    animation-duration: 2600ms, 300ms;
+    animation-duration: 2000ms, 300ms;
     animation-iteration-count: 1, 5;
 }
 
@@ -1457,7 +1457,7 @@
     right: 463px;
     animation-delay: 0.01s !important;
     animation-name: heightChangerTlb, flasher;
-    animation-duration: 3400ms, 300ms;
+    animation-duration: 2750ms, 300ms;
     animation-iteration-count: 1, 5;
 
 }
@@ -1474,7 +1474,7 @@
     right: 245px;
     animation-delay: 0.01s !important;
     animation-name: heightChangerTlc, flasher;
-    animation-duration: 1500ms, 300ms;
+    animation-duration: 1000ms, 300ms;
     animation-iteration-count: 1, 5;
 
 }
@@ -1526,7 +1526,7 @@
     background: #00fdfd54;
     /* animation-delay: 0.15s !important; */
     animation-name: widthChangerTopSect, flasher;
-    animation-duration: 1s, 300ms;
+    animation-duration: 800ms, 300ms;
     animation-iteration-count: 1, 5;
     border: 5px solid transparent;
     border-image: 16 repeating-linear-gradient(30deg, rgba(0, 247, 255, 0.8) 0, rgba(0, 247, 255, 0.8) 0.5em, transparent 0, transparent 0.855em,
@@ -1542,7 +1542,7 @@
     height: 300px;
     animation-delay: 0.15s !important;
     animation-name: flasher;
-    animation-duration: 200ms;
+    animation-duration: 160ms;
     animation-iteration-count: 5;
     border: 1px solid #00fdfd;
 }
@@ -1605,7 +1605,10 @@
     border: 1px solid #00fdfd;
     background: #00fdfd1f;
 }
-.sideRight img{}
+.sideRight img{
+    animation: flasher 600ms ease 0.01s 5 ;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
 .sideLeft{
     width: 500px;
     height: 250px;
@@ -1624,18 +1627,68 @@
 .rightLinker1{
     width: 160px;
     height: 20px;
-    position: relative;
+    position: absolute;
     top: -150px;
     right: 285px;
     transform: skew(20deg);
     border-top: 0.25px solid #00fdfd;
     border-right: 0.25px solid #00fdfd;
+    transition: ease;
+    animation-delay: 0.01s !important;
+    animation-name: rl1Anim, flasher;
+    animation-duration: 2000ms, 300ms;
+    animation-iteration-count: 1, 5;
 }
 .rightLinker2{
     width: 82px;
     height: 2px;
-    position: relative;
-    top: -150px;
-    right: 122px;
+    position: absolute;
+    top: -131px;
+    right: 200px;
     border-top: 0.25px solid #00fdfd;
+    animation-delay: 0.01s !important;
+    animation-name: rl2Anim, flasher;
+    animation-duration: 1000ms, 300ms;
+    animation-iteration-count: 1, 5;
+}
+@keyframes rl1Anim{
+    0%{
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
+    60%{
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
+    61%{
+        opacity: 1;
+        width: 0px;
+        height: 0px;
+    }
+    80%{
+        width: 0px;
+        height: 20px;
+    }
+    100%{
+        width: 160px;
+    }
+}
+@keyframes rl2Anim{
+    0%{
+        opacity: 0;
+        width: 0px;
+    }
+    75%{
+        opacity: 0;
+        width: 0px;
+    }
+    76%{
+        opacity: 1;
+        width: 0px;
+    }
+    100%{
+        width: 82px;
+    }
 }

@@ -55,6 +55,7 @@ export class LoadingAnimationComponent implements OnInit {
     }, 5000);
     $("#clock-container").hide();
     $(".sideArmTopRight").hide();
+    $(".sideRight").hide();
     setTimeout(() => {
       $("#clock-container").show();
     }, 2000);
@@ -65,6 +66,7 @@ export class LoadingAnimationComponent implements OnInit {
       $(".linkerTLC").css('opacity', '1');
       $(".sideArmLeft").css('opacity', '1');
       $(".sideArmTopRight").show();
+      $(".sideRight").show();
     }, 5000);
   }
   numberIterator() {
